@@ -41,4 +41,4 @@ module.exports = (sequelize) => {
       defaultValue: "Unknown"
     }
   });
-};
+};//exportamos una funciion con la definicion del objeto
