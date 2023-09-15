@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L",
+    "start": "nodemon -L index.js",
     "test": "mocha"
   },
   "author": "Jou",
