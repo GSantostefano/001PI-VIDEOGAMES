@@ -1,7 +1,12 @@
+// Esta función se utiliza para obtener los géneros de videojuegos desde la API de Rawg, 
+// almacenarlos en una base de datos si la tabla de géneros está vacía y 
+//luego devolver los nombres de los géneros almacenados en la base de datos. 
+// Esto es útil para asegurarse de que siempre tengas una lista actualizada de géneros disponibles en tu base de datos para utilizar en tu aplicación.
+
+
 const axios = require("axios");
 require("dotenv").config();
-const apiKey = process.env.API_KEY;
-const URL = `https://api.rawg.io/api/genres?key=${apiKey}`;
+const URL = `${process.env.API_URL}/genres?key=${process.env.API_KEY}`;
 const { Genre } = require("../db");
 
 const allGenres = async () => {

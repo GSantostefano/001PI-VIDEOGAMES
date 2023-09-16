@@ -5,7 +5,7 @@
 
 const {Router} = require("express");
 const router = Router();
-const getGenres = require("../handlers/getGenresHandlers");
+const getGenres = require("../handlers/getGenresHandler");
 
 
 router.get("/", getGenres);//1 ruta, 2 handler

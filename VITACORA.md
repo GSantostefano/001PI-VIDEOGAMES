@@ -28,3 +28,13 @@ INICIANDO UN PI::
 README::
 
 📌
+
+
+
+repaso 
+
+paso 1: inicializar el proyecto, inicializamos node, instalar el package.json
+instalar dependencias
+npm init -y
+npm express axios nodemon morgan sequelize pg pg-hstore dotenv
+
