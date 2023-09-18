@@ -50,6 +50,10 @@ const allDataGames = async () => {
         // Combina los videojuegos de la API y de la base de datos en un solo array.
         const allVideogames = DBVideogames.concat(allVideogamesArray);
 
+
+
+        console.log("Cantidad de objetos en allVideogamesArray:", allVideogamesArray.length);
+        console.log("Cantidad de paginas:", pageNum); 
         // Retorna el array que contiene todos los videojuegos.
         return allVideogames;
     } catch (error) {
