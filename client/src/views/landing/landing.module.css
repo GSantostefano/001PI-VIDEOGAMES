@@ -1,13 +1,13 @@
 .Container{
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 15%;
+  left: 30%;
   width: fit-content;
   text-align: left;
   color: #ffffff;
   font-size: 30px;
   font-weight: 600;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   padding-left: 4rem;
   padding-right: 4rem;
   padding-bottom: 2rem;
@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("./dark-abstract-red-light-background-gradient-shapes-with-hexagon-mesh-pattern-decoration-vector.jpg");
+    background-image: url("./landing.jpg");
     
     background-repeat: no-repeat;
     background-position: center;
@@ -28,11 +28,11 @@
 
 .landingPageButton{
   width: fit-content;
-  position: relative;
+  position: relative; 
   z-index: 1;
   font-size: 30px;
   font-weight: 600;
-  left: 25%;
+  left: 20%;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.9);
   border-color: rgb(255, 0, 0);
@@ -41,4 +41,11 @@
   color: #ff0000;
   background-color: rgb(255, 0, 0, 0.2);
   text-decoration: none;
+  cursor: pointer;
+}
+
+
+.Landindlink {
+  color: #ff0000; /* Cambiado a un color rojo */
+  cursor: pointer;
 }
