@@ -1,17 +1,17 @@
 
-import "./home.styles.css";
+import style from "./home.module.css";
 
 import Navbar from "../../components/navbar/navbar.component";
 import Cards from "../../components/cards/cards.component";
-
 
 function Home() {
   
   return (
     
-      <div className='Container'>
-      <p>estas en la HomePage</p>
+      <div className={style.Container}>
+      
       <Navbar/>
+      <h2>Home</h2>
       <Cards/>
       </div>
         

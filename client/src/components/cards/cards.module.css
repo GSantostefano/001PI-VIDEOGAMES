@@ -1,0 +1,21 @@
+/* cards.module.css */
+
+.Container {
+    background-color: rgba(0, 0, 0, 0);
+    display: grid;
+    grid-template-columns:repeat(3,33%);
+    height: 40vh;
+    gap: 2%;
+    padding: 5%;
+    border-radius: 15px;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 20vh;
+    overflow: auto;
+}
+/* grid-template-columns: repeat(3, 255.333px); */
+/* Estilo para las barras de desplazamiento en navegadores webkit */
+::-webkit-scrollbar {
+    width: 0%; /* Ancho de la barra de desplazamiento vertical */
+    height: 0%;
+  }

@@ -1,12 +1,14 @@
 
-import "./card.styles.css";
+import style from "./card.module.css";
 
 function Card() {
   
   return (
     
-      <div className='Container'>
-      <p>estas en la cardPage</p>
+      <div className={style.Container}>
+      <h2>Nombre:</h2>
+      <p>Imagen:</p>
+      <p>Géneros:</p>
       </div>
      
     
