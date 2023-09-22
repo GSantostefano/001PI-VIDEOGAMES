@@ -1,5 +1,6 @@
 
-import "./detail.styles.css";
+import "./DetailPage.styles.css";
+
 
 function Detail() {
   

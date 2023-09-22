@@ -1,25 +1,24 @@
 import { useState } from 'react';
-import {Route,Routes} from "react-router-dom";
+import {Route,Routes, useLocation} from "react-router-dom";
 
-import Home from "./views/home/home.component";
-import Detail from './views/detail/detail.component';
-import Create from './views/create/create.component';
-import Landing from './views/landing/landing';
-import Card from './components/card/card.component';
-import Cards from './components/cards/cards.component';
+import Home from "./views/HomePage/HomePage";
+import Detail from './views/DetailPage/DetailPage';
+import Create from './views/CreatePage/CreatePage';
+import Landing from './views/LandingPage/LandingPage';
+import Nav from "./components/Nav/Nav";
+
 function App() {
-  
+  const location = useLocation();
+  const isHome = location.pathname === '/'; 
   return (
     
-      <div>
+      <div className="App">
+      {!isHome && <Nav />}
       <Routes>
       <Route path="/" element={ <Landing /> } />      
       <Route exact path="/home" element={<Home/>}/>
       <Route path="/detail/:id" element={<Detail/>}/>
       <Route path="/create" element={<Create/>}/>
-
-      <Route path="/card" element={ <Card /> } />
-      <Route path="/cards" element={ <Cards /> } />
       </Routes>
       </div>
   )

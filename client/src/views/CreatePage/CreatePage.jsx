@@ -1,5 +1,6 @@
 
-import "./create.styles.css";
+import "./CreatePage.styles.css";
+
 
 function Create() {
   
