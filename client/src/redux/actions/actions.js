@@ -33,7 +33,7 @@ export const getVideogameName = (name) => {
 };
 export const getVideogamesId = (id) => {
   return async (dispatch) => {
-    const { data } = await axios.get(`http://localhost:3001/videogames/${id}`);
+    const { data } = await axios.get(`http://localhost:3001/videogames/id/${id}`);
     dispatch({
       type: GET_VIDEOGAMES_ID,
       payload: data,

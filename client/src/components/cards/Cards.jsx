@@ -9,7 +9,7 @@ const Cards = () => {
   const videogames = useSelector((state) => state.videogames);
   const dispatch = useDispatch();
   const [actualPage, setActualPage] = useState(1);
-  const videogamesPerPage = 12;
+  const videogamesPerPage = 15;
 
   useEffect(() => {
     if (videogames.length === 0) {
@@ -43,16 +43,22 @@ const Cards = () => {
   };
 
   return (
-    <div className={style.cards} >
+    <div>
+      <div >
       {/* Componente Paginacón TOP */}
       <PageIndex
         totalPages={Math.ceil(videogames.length / videogamesPerPage)}
         currentPage={actualPage}
         onPageChange={paginate}
       />
+      </div>
 
       {/* Componente Pokemon con las CARDS y sus detalles */}
+      <div >
       <Card videogames={currentVideogames} />
+      </div>
+
+
 
       {/* Botones ANTERIOR y SIGUIENTE Paginación BOTTOM */}
       <div className={style.botones} >

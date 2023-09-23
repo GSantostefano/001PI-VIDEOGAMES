@@ -1,25 +1,36 @@
-
+import React, { useState } from 'react';
 import style from './LandingPage.module.css';
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 function Landing() {
-  
+  const [showDiv, setShowDiv] = useState(true);
+
+  const handleClick = () => {
+    // Cuando se hace clic en el botón, aplica la clase de desvanecimiento
+    setShowDiv(false);
+
+    // Espera a que se complete la animación antes de redirigir
+    setTimeout(() => {
+      // Redirige a la página de inicio
+      window.location.href = '/home';
+    }, 1500); // Ajusta el tiempo de espera según tu preferencia
+  };
+
   return (
     <div className={style.background}>
+      {/* Aplica la clase de desvanecimiento si showDiv es falso */}
+      <div className={`${style.Container} ${showDiv ? '' : style['fade-out']}`}>
+        <h1>¡Henry Videogames!</h1>
+        <h4>El sitio indicado para conocer la información</h4>
+        <h4>De tu próxima aventura gaming</h4>
 
-      <div className={style.Container}>
-      <h1>¡Henry Videogames!</h1>
-      <h4>El sitio indicado para conocer la información</h4>
-      <h4>De tu próxima aventura gaming</h4>
-      
-        <Link to="/home">
-        <button className={style.landingPageButton}>Click aqui para descubrirla</button>
-      </Link>    
+        <button className={style.landingPageButton} onClick={handleClick}>
+          Click aquí para descubrirla
+        </button>
       </div>
-
-     </div>
-    
-  )
+    </div>
+  );
 }
 
 export default Landing;
+

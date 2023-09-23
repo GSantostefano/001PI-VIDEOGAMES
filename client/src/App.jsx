@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {Route,Routes, useLocation} from "react-router-dom";
-
+import  "./App.css";
 import Home from "./views/HomePage/HomePage";
 import Detail from './views/DetailPage/DetailPage';
 import Create from './views/CreatePage/CreatePage';
@@ -17,7 +17,7 @@ function App() {
       <Routes>
       <Route path="/" element={ <Landing /> } />      
       <Route exact path="/home" element={<Home/>}/>
-      <Route path="/detail/:id" element={<Detail/>}/>
+      <Route path="/id/:id" element={<Detail/>}/>
       <Route path="/create" element={<Create/>}/>
       </Routes>
       </div>

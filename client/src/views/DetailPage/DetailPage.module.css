@@ -1,0 +1,58 @@
+body {
+    background-image: url("./detail.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(138, 1, 1, 0.78);
+    padding: 3%;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 20px; /* Reduje el radio del borde para un aspecto más moderno */
+    margin: 3%;
+}
+
+.blackText {
+    font-size: 24px; /* Reduje el tamaño de fuente para una mejor legibilidad */
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+}
+
+.whiteText {
+    font-size: 20px; /* Tamaño de fuente para el texto en blanco */
+    color: #fff;
+}
+
+.image {
+    display: block; /* Cambiado a bloque para evitar espacios innecesarios */
+    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    height: auto; /* Evita la distorsión de la imagen */
+}
+
+.description {
+    font-size: 18px; /* Tamaño de fuente para la descripción */
+    line-height: 1.5; /* Espaciado de línea mejorado para una mejor legibilidad */
+}
+
+.goback {
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px; /* Cambiado de margin-bottom a margin-top para mayor coherencia */
+    font-family: Arial, Helvetica, sans-serif; /* Cambiado a una fuente más común */
+    padding: 15px 25px; /* Espaciado ajustado para un mejor aspecto */
+    background-color: #000;
+    color: #ffcc00; /* Cambiado a un color amarillo para mayor contraste */
+    cursor: pointer;
+}
