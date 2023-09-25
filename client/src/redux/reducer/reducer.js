@@ -32,26 +32,53 @@ import {
           videogamesCopy: payload,
           videogamesOrigin: payload,
         };
-      
       case GET_VIDEOGAME_NAME:
         state.videogamesCopy = payload;
         return {
           ...state,
           videogames: state.videogamesCopy,
         };
-
       case GET_VIDEOGAMES_ID:
         return {
           ...state,
           id: payload,
         };
-      
       case GET_GENRES:
-        console.log("payload",payload);
         return {
           ...state,
           genres: payload,
         };
+
+  
+
+        case FILTER_BY_GENRES:
+          console.log("state.videogamesCopy", state.videogamesCopy);
+          console.log("PAYLOAD", payload);
+        
+          // Filtra desde la API
+          const filteredFromApi = state.videogamesCopy.filter((videogame) => {
+            if (Array.isArray(videogame.genres)) {
+              return videogame.genres.some((genre) => genre.name === payload);
+            }
+            return false;
+          });
+        
+          // Filtra desde la base de datos
+          const filteredFromDb = state.videogamesCopy.filter((videogame) => {
+            if (Array.isArray(videogame.Genres)) {
+              return videogame.Genres.some((genre) => genre.name === payload);
+            }
+            return false;
+          });
+        
+          // Combina los resultados de ambas fuentes
+          const filteredVideoGames = [...filteredFromApi, ...filteredFromDb];
+        
+          return {
+            ...state,
+            videogames: filteredVideoGames,
+          };
+        
 
       case POST_VIDEOGAMES:
         return {
@@ -59,46 +86,25 @@ import {
         };
       
       case FILTER:
-        console.log("state.videogamesCopy", state.videogamesCopy);
-        console.log("Filtering by:", payload);
-        console.log("Filtered objects:", state.videogamesCopy.filter((videogame) => videogame.id));
+        
         if (payload === "Api") {
           const allVideogamesApi = state.videogamesCopy.filter(
             (videogame) => typeof videogame.id === "number"
           );
-          console.log("allVideogamesApi:", allVideogamesApi);
+          
           return { ...state, videogames: allVideogamesApi };
         }
         if (payload === "BD") {
           const allVideogamesBD = state.videogamesCopy.filter(
             (videogame) => typeof videogame.id === "string"
           );
-          console.log("allVideogamesBD:", allVideogamesBD);
+          
           return { ...state, videogames: allVideogamesBD };
         } else {
           return {
             ...state,
             videogames: state.videogamesCopy, 
           }};
-
-      case FILTER_BY_GENRES:
-          if (payload !== "All Videogames") {
-            const filteredVideogames = state.videogamesOrigin.filter(
-              (videogame) => videogame.Genre?.includes(payload)
-            );
-            const filteredVideogamesDB = state.videogamesOrigin.filter(
-              (videogame) => videogame.genres?.some((genre) => genre.name === payload)
-            );
-            const combinedVideogames = [...filteredVideogames, ...filteredVideogamesDB];
-            const uniqueVideogames = Array.from(new Set(combinedVideogames.map((videogame) => videogame.id)))
-              .map((id) => combinedVideogames.find((videogame) => videogame.id === id));
-            return { ...state, videogames: uniqueVideogames };
-          } else {
-            return {
-              ...state,
-              videogames: state.videogamesOrigin,
-            };
-          };
 
       case ORDER:
 
@@ -133,11 +139,14 @@ import {
               payload === "DES"
                 ? ratingToFilter.sort((a, z) => z.rating - a.rating)
                 : ratingToFilter.sort((a, z) => a.rating - z.rating),
-            page: 1
+            
           };
-
-   
-
+      
+      case PAGE:
+        return {
+          ...state,
+        pageActual: payload,
+        }
 
       default:
         return { ...state };

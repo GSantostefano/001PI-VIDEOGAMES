@@ -18,7 +18,10 @@
   color: #ffcc00;
   cursor: pointer;
 }
-
+.Home:hover {
+  transform: scale(1.1);
+  text-decoration:underline;
+}
 .btnCrear {
   font-size:0.8rem;
   padding: 10px 20px;

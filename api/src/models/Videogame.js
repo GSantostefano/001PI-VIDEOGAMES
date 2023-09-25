@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    plataforms: {
+    platforms: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -29,11 +29,6 @@ module.exports = (sequelize) => {
     released: {
       type: DataTypes.DATEONLY,
       allowNull: false,
-    },
-    website: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      defaultValue: "Unknown"
     },
     rating: {
       type: DataTypes.FLOAT,

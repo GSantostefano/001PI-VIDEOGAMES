@@ -199,7 +199,7 @@ const FormPage = () => {
         }
         <section>
           <label htmlFor="genres" className={styles.label}>Genres: </label>
-          <select onChange={(e) => handleGenres(e)} defaultValue='default' className={styles.select}>
+          <select onChange={(e) => handleGenres(e)} defaultValue='default' className={styles.select} multiple>
             <option value="default" disabled >Select Genre</option>
             {
               allGenres?.map((genre) => (

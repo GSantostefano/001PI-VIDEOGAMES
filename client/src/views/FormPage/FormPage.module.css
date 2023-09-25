@@ -60,16 +60,17 @@
   
   /* Estilos para el botón de enviar */
   .button {
-    width: 100%;
-    padding: 10px;
-    background-color: #ffcc00;
-    color: #ff0000;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
+    width: 300px;
+    font-size:1rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #ffcc00;
     font-weight: 700;
+    background-color: rgba(255, 0, 0, 0.2);
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: 'robot', sans-serif;
+    
   }
   
   /* Estilos para el botón de enviar al pasar el cursor */

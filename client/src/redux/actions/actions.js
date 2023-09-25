@@ -9,6 +9,7 @@ import {
   ORDER,
   FILTER_BY_GENRES,
   FILTER_RATING,
+  PAGE,
 } from "./actions_types";
 
 export const getVideogames = () => {
@@ -45,16 +46,24 @@ export const getVideogamesId = (id) => {
 
 export const getGenres = () => {
   return async (dispatch) => {
-    try{
-    const { data } = await axios.get("http://localhost:3001/genres");
-    console.log("data",data);
-    dispatch({
-      type: GET_GENRES,
-      payload: data,
-    });
-  }catch (error) {
-  console.log(error.message, 'error en géneros');
-}}}
+    try {
+      const apiData = await axios.get('http://localhost:3001/genres');
+      const genres = apiData.data;
+      dispatch({
+        type: GET_GENRES,
+        payload: genres,
+      })
+    } catch (error) {
+      console.log(error.message, 'error en géneros');
+    }
+  }
+}
+export const filterByGenres = (payload) => {
+  return {
+    type: FILTER_BY_GENRES,
+    payload: payload,
+  };
+};
 
 export const createVideogames = (videogame) => {
   return async (dispatch) => {
@@ -76,12 +85,7 @@ export const filterVideogame = (filter) => {
   };
 };
 
-export const filterByGenres = (filter) => {
-  return {
-    type: FILTER_BY_GENRES,
-    payload: filter,
-  };
-};
+
 
 export const orderVideogames = (order) => {
   return {
@@ -94,5 +98,12 @@ export function filterByRating(payload) {
   return {
       type: FILTER_RATING,
       payload: payload
+  }
+}
+
+export const setPage = (page) =>{
+  return {
+    type: PAGE,
+    payload: page
   }
 }

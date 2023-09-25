@@ -1,5 +1,5 @@
 // Importa el modelo Videogame desde el archivo "../db".
-const { Videogame } = require("../db");
+const { Videogame, Genre } = require("../db");
 
 // Importa la librería axios para realizar solicitudes HTTP.
 const axios = require("axios");
@@ -45,7 +45,9 @@ const allDataGames = async () => {
         }
 
         // Obtiene todos los videojuegos de la base de datos local utilizando Sequelize.
-        const DBVideogames = await Videogame.findAll();
+        const DBVideogames = await Videogame.findAll({
+            include: Genre,
+        });
 
         // Combina los videojuegos de la API y de la base de datos en un solo array.
         const allVideogames = DBVideogames.concat(allVideogamesArray);

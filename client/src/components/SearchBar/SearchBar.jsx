@@ -58,6 +58,9 @@ const SearchBar = () => {
         <button className={style.btnBuscar} type="submit" onClick={handleSubmit}>
           BUSCAR VIDEOGAMES
         </button>
+        <button className={style.btnBuscar} onClick={handleClear}>
+          RESET
+        </button>
       </div>
     </div>
   );

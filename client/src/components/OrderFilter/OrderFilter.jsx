@@ -9,19 +9,19 @@ const OrderFilter = () => {
   const dispatch = useDispatch();
   const [aux, setAux] = useState(false);
   // const [selectedGenre, setSelectedGenre] = useState(false);
-  // const genres = useSelector((state) => state.genres);
-
+  const genres = useSelector((state) => state.genres);
+  
   useEffect(() => {
     dispatch(getGenres());
   }, [dispatch]);
+
+  console.log(">>>>>genres",genres)
 
   const handleFilter = (event) => {
     dispatch(filterVideogame(event.target.value));
   };
 
-  function handleGenres(event) {
-    dispatch(filterByGenres(event.target.value));
-  }
+  
   function handleSelectChange(event) {
     if (event.target.value === "ASC" || event.target.value === "DES") {
       dispatch(filterByRating(event.target.value));
@@ -29,6 +29,13 @@ const OrderFilter = () => {
       dispatch(orderVideogames(event.target.value));
       setAux(!aux);
     }
+  }
+
+
+  const handleFilterGenres = (event) => {
+    dispatch(filterByGenres(event.target.value))
+    setAux(!aux);
+    onPageChange(1);
   }
   return (
     <div className={style.container}>
@@ -46,30 +53,20 @@ const OrderFilter = () => {
         </div>
         <div>
 
-      <select
-        name="genero"
-        onChange={handleGenres}
-        defaultValue=""
-        className={style.option} // Agregamos la misma clase aquí
-      >
-        <option value="Action">Action</option>
-        <option value="Inide">Inide</option>
-        <option value="Adventure">Adventure</option>
-        <option value="RPG">RPG</option>
-        <option value="Strategy">Strategy</option>
-        <option value="Shooter">Shooter</option>
-        <option value="Casual">Casual</option>
-        <option value="Simulation">Simulation</option>
-        <option value="Puzzle">Puzzle</option>
-        <option value="Arcade">Arcade</option>
-        <option value="Platformer">Platformer</option>
-        <option value="Massively Multiplayer">Massively Multiplayer</option>
-        <option value="Racing">Racing</option>
-        <option value="Sports">Sports</option>
-        <option value="Fighting">Fighting</option>
-        <option value="Board Games">Board Games</option>
-        <option value="Educational">Educational</option>
+        <select className={style.option} onChange={(e)=> handleFilterGenres(e)} defaultValue='default'>
+        <option value="default" disabled>Filter by Genre</option>
+        
+        {
+          genres?.map((genre) => (
+            <option key={genre.name} value={genre.name}>
+              
+              {genre.name}
+            </option>
+        ))
+        }
       </select>
+
+ 
     </div>
 
 
@@ -98,7 +95,7 @@ const OrderFilter = () => {
           onChange={handleFilter}
         />
       </label>
-      <label for="red" htmlFor="baseDeDatos" className={style.label}>
+      <label  htmlFor="baseDeDatos" className={style.label}>
         {" "}
         DB
         <input

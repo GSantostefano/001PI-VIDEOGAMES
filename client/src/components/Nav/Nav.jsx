@@ -23,7 +23,7 @@ const Nav = () => {
      else {
       return (
         <div>
-        <div className={style.container}>
+        <div >
         <div className={style.content}>
           <div> <Link to="/home" style={{ textDecoration: "none" }}>
           <p className={style.Home}>HOME</p>

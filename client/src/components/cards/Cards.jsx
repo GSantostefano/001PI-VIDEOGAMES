@@ -6,10 +6,9 @@ import { getVideogames } from "../../redux/actions/actions";
 import Loading from "../Loading/Loading"; 
 
 const Cards = ({videogames}) => {
-  console.log(videogames);
+
   const allVideogames = useSelector((state) => state.videogames);
-  console.log(allVideogames);
-  console.log(videogames);
+
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true); // Agrega el estado loading
 

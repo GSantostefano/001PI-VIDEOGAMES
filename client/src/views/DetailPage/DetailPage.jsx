@@ -45,12 +45,32 @@ const DetailPage = () => {
         <div className={style.blackText}>Released: <span className={style.whiteText}>{videogame.released}</span></div>
   
         {/* Mapea las plataformas y muéstralas */}
-        <div className={style.blackText}>Platforms: <span className={style.whiteText}>{videogame.platforms?.map(platform => platform.platform.name).join(', ')}</span></div>
-        <div className={style.blackText}>Genres: <span className={style.whiteText}>{videogame.genres?.map(genre => genre).join(', ')}</span></div>
+
+
+        <div className={style.blackText}>Platforms: 
+
+        <span className={style.whiteText}>
+        
+        {typeof videogame.platforms === "string" 
+
+        ? (<span>{videogame.platforms}</span>)
+        
+        : <span>{videogame.platforms?.map(platform => platform.platform.name).join(', ')}</span>}
+        
+        </span>
+
+        </div>
+
+
+
+
+        <div className={style.blackText}>Genres: 
+        <span className={style.whiteText}>{videogame.genres?.map(genre => genre).join(', ')}
+        </span></div>
         <div className={style.blackText}>Rating: <span className={style.whiteText}>{videogame.rating}</span></div>
         <div className={style.blackText}>Website: <span className={style.whiteText}>{videogame.website}</span></div>
         <div className={style.description} dangerouslySetInnerHTML={{ __html: videogame.description }}></div>
-        <div>
+        <div className={style.containerBtn}>
         <Link to="/home"><button className={style.goback}>VOLVER</button></Link>
       </div>
       </div>

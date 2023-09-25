@@ -54,7 +54,7 @@ function Home() {
 
   return (
     <div >
-      <div><Nav/></div>
+      <Nav onPageChange={paginate} />
     <div ><PageIndex
       totalPages={Math.ceil(videogames.length / videogamesPerPage)}
       currentPage={actualPage}
