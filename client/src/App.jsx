@@ -2,23 +2,23 @@ import { useState } from 'react';
 import {Route,Routes, useLocation} from "react-router-dom";
 import  "./App.css";
 import Home from "./views/HomePage/HomePage";
+import FormPage from "./views/FormPage/FormPage";
 import Detail from './views/DetailPage/DetailPage';
-import Create from './views/CreatePage/CreatePage';
 import Landing from './views/LandingPage/LandingPage';
 import Nav from "./components/Nav/Nav";
 
 function App() {
-  const location = useLocation();
-  const isHome = location.pathname === '/'; 
+  const {pathname} = useLocation();
+  
   return (
     
       <div className="App">
-      {!isHome && <Nav />}
+      {pathname!=="/home" && <Nav />}
       <Routes>
       <Route path="/" element={ <Landing /> } />      
       <Route exact path="/home" element={<Home/>}/>
       <Route path="/id/:id" element={<Detail/>}/>
-      <Route path="/create" element={<Create/>}/>
+      <Route path="/form" element={<FormPage/>}/>
       </Routes>
       </div>
   )

@@ -1,0 +1,97 @@
+/* Agrega estos estilos al final de tu archivo CSS */
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between; /* Centra horizontalmente y añade espacio entre elementos */
+    align-items: center; /* Centra verticalmente */
+    background-color: rgba(255, 0, 0, 0.2);
+    padding: 0%; /* Aumenta el espacio interno */
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin: 2%; /* Agrega un margen exterior */
+    font-family: 'robot', sans-serif;
+    letter-spacing: 2px;
+}
+.aaaa{
+    color: red;
+}
+
+/* Título "Ordenar y Filtrar" */
+.orden {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffcc00;
+    
+}
+
+/* Estilo para las opciones de orden y filtro */
+.option {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0px 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #ffcc00;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px; /* Agrega un espacio izquierdo para separar de la opción anterior */
+    font-family: 'robot', sans-serif;
+    letter-spacing: 2px;
+}
+
+.option:hover {
+    background-color: rgba(252, 0, 0, 0.432);
+}
+
+/* Estilo para las etiquetas "ALL", "API" y "DB" */
+.labels {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffcc00;
+}
+
+/* Estilo para cada etiqueta individual */
+.label {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    
+}
+
+
+input[type="radio"] {
+    margin-right: 5px;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+/* Estilo para el círculo interior (marca de verificación) */
+input[type="radio"]:checked {
+    background-color: #ffcc00; /* Cambia el fondo a amarillo cuando está seleccionado */
+    border: 2px solid #ffcc00; /* Cambia el borde a amarillo cuando está seleccionado */
+}
+
+/* Estilo para los botones de radio y sus etiquetas */
+.label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espacio entre los botones de radio */
+    cursor: pointer;
+    accent-color: #ffcc00; /* Cambia el cursor al hacer hover */
+  }
+  
+  /* Estilo cuando el botón de radio está marcado */
+  .input[type="radio"]::before + label {
+    accent-color: rgb(115, 133, 26); /* Cambia el color del texto cuando está marcado */
+  }
+  .radioInput {
+    /* Agrega los estilos que desees aquí */
+    color: #ff0000; /* Por ejemplo, cambia el color del botón de radio cuando está marcado */
+  }

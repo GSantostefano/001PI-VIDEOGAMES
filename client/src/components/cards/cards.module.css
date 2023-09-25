@@ -39,3 +39,68 @@
     font-weight: 700;
     padding: 20px;
 }
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px; /* Aumenta el ancho para una mejor legibilidad */
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    text-align: center; /* Centra el texto */
+    
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0.8rem rgba(255, 0, 0, 1);
+  }
+
+  .image {
+    max-width: 100%;/* Ajusta la imagen al tamaño del contenedor */
+    max-height: 200px;
+    min-height: 200px; /* Establece la altura máxima */
+    margin-bottom: 10px;
+    object-fit: cover; /* Ajusta la imagen manteniendo la relación de aspecto */
+    
+  }
+  
+  .name { /* Cambia la fuente para mayor compatibilidad */
+    color: #ffcc00;
+    min-height: 50px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .id {
+    color: #fff;
+    margin-top: 0;
+  }
+  
+  .grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-height: 600px;
+    overflow-y: auto;
+    margin: 1%;
+    gap: 20px; /* Agrega espacio entre las tarjetas */
+  }
+  
+  .grid::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .grid::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  .grid::-webkit-scrollbar-track {
+    background-color: transparent;
+  }

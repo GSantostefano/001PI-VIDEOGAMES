@@ -15,30 +15,43 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: rgba(138, 1, 1, 0.78);
+    background-color: rgba(255, 0, 0, 0.2);
+    margin: 1%;
     padding: 3%;
     color: #fff;
     overflow: hidden;
     border-radius: 20px; /* Reduje el radio del borde para un aspecto más moderno */
-    margin: 3%;
+    
 }
 
 .blackText {
     font-size: 24px; /* Reduje el tamaño de fuente para una mejor legibilidad */
     font-weight: 700;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #000;
+    color: #ffcc00;
 }
-
+.title {
+    font-size: 3rem; /* Reduje el tamaño de fuente para una mejor legibilidad */
+    font-weight: 700;
+    color: #ffcc00;
+}
+.title2 {
+    font-size: 3rem; /* Reduje el tamaño de fuente para una mejor legibilidad */
+    font-weight: 700;
+    color: #fbfbfb;
+}
 .whiteText {
     font-size: 20px; /* Tamaño de fuente para el texto en blanco */
     color: #fff;
 }
-
-.image {
-    display: block; /* Cambiado a bloque para evitar espacios innecesarios */
-    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
-    height: auto; /* Evita la distorsión de la imagen */
+.containerBtn{
+    display: flex;
+    justify-content: flex-start;
+}
+.image { 
+    width: 100%;
+    max-height: 33rem;
+    object-fit: cover;
+    object-position: top;
 }
 
 .description {
@@ -47,12 +60,15 @@ body {
 }
 
 .goback {
-    border: none;
-    border-radius: 5px;
-    margin-top: 20px; /* Cambiado de margin-bottom a margin-top para mayor coherencia */
-    font-family: Arial, Helvetica, sans-serif; /* Cambiado a una fuente más común */
-    padding: 15px 25px; /* Espaciado ajustado para un mejor aspecto */
-    background-color: #000;
-    color: #ffcc00; /* Cambiado a un color amarillo para mayor contraste */
+    width: 300px;
+    font-size:1rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #ffcc00;
+    font-weight: 700;
+    background-color: rgba(255, 0, 0, 0.2);
     cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'robot', sans-serif;
+    
 }

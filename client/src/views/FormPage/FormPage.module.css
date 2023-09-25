@@ -1,0 +1,83 @@
+/* Estilos para el formulario */
+.formContainer {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(130, 41, 41, 0.712);
+    color: #ffcc00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  }
+ .label{
+    font-size: 1rem;
+ }
+  .content{
+    margin-left: 5%;
+    float: right;
+    width: 70%;
+  }
+  .verticalText {
+    margin-left: 3%;
+    color: #ffcc00;
+    text-orientation:upright;
+    writing-mode: vertical-rl;
+    font-size: 3rem;/* Ajusta el margen derecho según tus preferencias */
+  }
+  
+  /* Estilo para cada línea de texto vertical */
+  .verticalText p {
+    margin: 5px 0; /* Ajusta el margen vertical entre las líneas de texto */
+  }
+  .select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  /* Estilos para los campos de entrada de texto */
+  .input {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  /* Estilos para los mensajes de error */
+  .error {
+    color: rgb(0, 255, 17);
+    font-size: 0.6rem;
+    margin-top: 5px;
+    
+  }
+  
+  /* Estilos para el botón de enviar */
+  .button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffcc00;
+    color: #ff0000;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Estilos para el botón de enviar al pasar el cursor */
+  .button:hover {
+    background-color: #ff00006e;
+    color: #ffcc00;
+  }
+  
+  /* Estilos para el elemento select */
+  
+  

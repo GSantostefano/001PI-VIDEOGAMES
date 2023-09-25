@@ -1,25 +1,23 @@
 /* Estilos para el contenedor principal */
-.container {
-
-}
 .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  background-color: none;
   border-radius: 10px;
-  background-color: rgba(255, 0, 0, 0.2);
   letter-spacing: 2px;
-  margin: 1%;
 }
+
 /* Estilos para el enlace Home */
 .Home {
-  font-size: 3rem;
+  font-size: 30px;
   color: #ffcc00;
   cursor: pointer;
 }
 
-.btnCrear {
+/* Estilos para el botón de búsqueda */
+.btnBuscar {
   font-size:0.8rem;
   padding: 10px 20px;
   border-radius: 25px;
@@ -31,8 +29,25 @@
   font-family: 'robot', sans-serif;
 }
 
-
 /* Estilos para el botón de búsqueda al pasar el cursor */
-.btnCrear:hover {
+.btnBuscar:hover {
   background-color: rgba(252, 0, 0, 0.6);
+}
+
+/* Estilos para el campo de entrada de texto */
+.input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  color: #ffcc00;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin-left: 10px;
+  outline: none;
+}
+
+/* Estilos para el campo de entrada de texto al tener foco */
+.input:focus {
+  background-color: rgba(252, 0, 0, 0.432);
+  border: 1px solid #ffcc00;
 }

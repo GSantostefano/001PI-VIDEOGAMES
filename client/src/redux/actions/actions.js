@@ -3,11 +3,12 @@ import {
   GET_VIDEOGAMES,
   GET_VIDEOGAME_NAME,
   GET_VIDEOGAMES_ID,
-  GET_TYPES,
+  GET_GENRES,
   POST_VIDEOGAMES,
   FILTER,
   ORDER,
-  FILTER_BY_TYPES,
+  FILTER_BY_GENRES,
+  FILTER_RATING,
 } from "./actions_types";
 
 export const getVideogames = () => {
@@ -31,6 +32,7 @@ export const getVideogameName = (name) => {
     });
   };
 };
+
 export const getVideogamesId = (id) => {
   return async (dispatch) => {
     const { data } = await axios.get(`http://localhost:3001/videogames/id/${id}`);
@@ -41,21 +43,24 @@ export const getVideogamesId = (id) => {
   };
 };
 
-export const getTypes = () => {
+export const getGenres = () => {
   return async (dispatch) => {
-    const { data } = await axios.get("http://localhost:3001/types");
+    try{
+    const { data } = await axios.get("http://localhost:3001/genres");
+    console.log("data",data);
     dispatch({
-      type: GET_TYPES,
+      type: GET_GENRES,
       payload: data,
     });
-  };
-};
+  }catch (error) {
+  console.log(error.message, 'error en géneros');
+}}}
 
 export const createVideogames = (videogame) => {
   return async (dispatch) => {
     const { data } = await axios.post(
       "http://localhost:3001/videogames",
-      pokemon
+      videogame
     );
     return {
       type: POST_VIDEOGAMES,
@@ -71,9 +76,9 @@ export const filterVideogame = (filter) => {
   };
 };
 
-export const filterByTypes = (filter) => {
+export const filterByGenres = (filter) => {
   return {
-    type: FILTER_BY_TYPES,
+    type: FILTER_BY_GENRES,
     payload: filter,
   };
 };
@@ -84,3 +89,10 @@ export const orderVideogames = (order) => {
     payload: order,
   };
 };
+
+export function filterByRating(payload) {
+  return {
+      type: FILTER_RATING,
+      payload: payload
+  }
+}

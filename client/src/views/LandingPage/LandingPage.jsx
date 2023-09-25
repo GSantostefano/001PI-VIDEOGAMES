@@ -20,9 +20,9 @@ function Landing() {
     <div className={style.background}>
       {/* Aplica la clase de desvanecimiento si showDiv es falso */}
       <div className={`${style.Container} ${showDiv ? '' : style['fade-out']}`}>
-        <h1>¡Henry Videogames!</h1>
+        <h1>¡R3C01L Videogames!</h1>
         <h4>El sitio indicado para conocer la información</h4>
-        <h4>De tu próxima aventura gaming</h4>
+        <h4>De tu proxima aventura gaming</h4>
 
         <button className={style.landingPageButton} onClick={handleClick}>
           Click aquí para descubrirla

@@ -7,36 +7,40 @@
     margin: 20px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
     border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     text-align: center; /* Centra el texto */
+    
   }
   
   .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0.8rem rgba(255, 0, 0, 1);
   }
-  
+
   .image {
-    max-width: 100%; /* Ajusta la imagen al tamaño del contenedor */
-    max-height: 200px; /* Establece la altura máxima */
+    max-width: 100%;/* Ajusta la imagen al tamaño del contenedor */
+    max-height: 200px;
+    min-height: 200px; /* Establece la altura máxima */
     margin-bottom: 10px;
     object-fit: cover; /* Ajusta la imagen manteniendo la relación de aspecto */
+    
   }
   
-  .name {
-    font-family: Arial, sans-serif; /* Cambia la fuente para mayor compatibilidad */
+  .name { /* Cambia la fuente para mayor compatibilidad */
     color: #ffcc00;
+    min-height: 50px;
     font-weight: bold;
     margin: 0;
+    
   }
   
   .id {
-    font-family: Arial, sans-serif;
     color: #fff;
     margin-top: 0;
+    
   }
   
   .grid {
