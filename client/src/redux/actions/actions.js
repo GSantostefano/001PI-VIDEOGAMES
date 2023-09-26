@@ -10,6 +10,8 @@ import {
   FILTER_BY_GENRES,
   FILTER_RATING,
   PAGE,
+  SET_CURRENT_PAGE,
+    SET_VIDEOGAMES_PER_PAGE,
 } from "./actions_types";
 
 export const getVideogames = () => {
@@ -107,3 +109,14 @@ export const setPage = (page) =>{
     payload: page
   }
 }
+
+export const setCurrentPage = (page) => ({
+  type: SET_CURRENT_PAGE,
+  payload: page,
+});
+
+export const setVideogamesPerPage = (perPage) => ({
+  type: SET_VIDEOGAMES_PER_PAGE,
+  payload: perPage,
+});
+//////////////////

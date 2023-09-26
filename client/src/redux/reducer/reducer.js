@@ -9,6 +9,10 @@ import {
     FILTER_BY_GENRES,
     PAGE,
     FILTER_RATING,
+    /////////////////
+    SET_CURRENT_PAGE,
+    SET_VIDEOGAMES_PER_PAGE,
+    //////////////////////
   } from "../actions/actions_types";
   
   const initialState = {
@@ -19,11 +23,24 @@ import {
     videogamesOrigin: [],
     plataforms:[],
     pageActual: 1,
+
+    //////////////////
+    currentPage: 1,
+    videogamesPerPage: 15,
+    ///////////////////
   };
   
   const rootReducer = (state = initialState, { type, payload }) => {
 
     switch (type) {
+//////////////////////////////////
+
+  case SET_CURRENT_PAGE:
+    return { ...state, currentPage: payload };
+  case SET_VIDEOGAMES_PER_PAGE:
+    return { ...state, videogamesPerPage: payload };
+
+//////////////////////////////
 
       case GET_VIDEOGAMES:
         return {
@@ -37,6 +54,7 @@ import {
         return {
           ...state,
           videogames: state.videogamesCopy,
+          currentPage: 1,
         };
       case GET_VIDEOGAMES_ID:
         return {
@@ -49,9 +67,7 @@ import {
           genres: payload,
         };
 
-  
-
-        case FILTER_BY_GENRES:
+      case FILTER_BY_GENRES:
           console.log("state.videogamesCopy", state.videogamesCopy);
           console.log("PAYLOAD", payload);
         
@@ -77,9 +93,9 @@ import {
           return {
             ...state,
             videogames: filteredVideoGames,
+            currentPage: 1,
           };
-        
-
+    
       case POST_VIDEOGAMES:
         return {
           ...state,
@@ -92,18 +108,19 @@ import {
             (videogame) => typeof videogame.id === "number"
           );
           
-          return { ...state, videogames: allVideogamesApi };
+          return { ...state, videogames: allVideogamesApi,currentPage: 1, };
         }
         if (payload === "BD") {
           const allVideogamesBD = state.videogamesCopy.filter(
             (videogame) => typeof videogame.id === "string"
           );
           
-          return { ...state, videogames: allVideogamesBD };
+          return { ...state, videogames: allVideogamesBD,currentPage: 1, };
         } else {
           return {
             ...state,
             videogames: state.videogamesCopy, 
+            currentPage: 1,
           }};
 
       case ORDER:
@@ -117,10 +134,12 @@ import {
               payload === "AscendingAZ"
                 ? alphabetic.sort((a, b) => a.name.localeCompare(b.name))
                 : alphabetic.sort((a, b) => b.name.localeCompare(a.name)),
+                currentPage: 1,
             videogamesCopy:
               payload === "AscendingAZ"
                 ? alphabeticCopy.sort((a, b) => a.name.localeCompare(b.name))
                 : alphabeticCopy.sort((a, b) => b.name.localeCompare(a.name)),
+                currentPage: 1,
           };
         }
         if (payload === "Id") {
@@ -128,6 +147,7 @@ import {
             ...state,
             videogames: state.videogamesOrigin,
             videogamesCopy: state.videogamesOrigin,
+            currentPage: 1,
           };
         };
 
@@ -139,6 +159,7 @@ import {
               payload === "DES"
                 ? ratingToFilter.sort((a, z) => z.rating - a.rating)
                 : ratingToFilter.sort((a, z) => a.rating - z.rating),
+                currentPage: 1,
             
           };
       

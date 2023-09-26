@@ -35,7 +35,6 @@ const OrderFilter = () => {
   const handleFilterGenres = (event) => {
     dispatch(filterByGenres(event.target.value))
     setAux(!aux);
-    onPageChange(1);
   }
   return (
     <div className={style.container}>
