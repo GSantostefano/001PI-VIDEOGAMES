@@ -18,7 +18,7 @@ function Landing() {
 
   return (
     <div className={style.background}>
-      {/* Aplica la clase de desvanecimiento si showDiv es falso */}
+
       <div className={`${style.Container} ${showDiv ? '' : style['fade-out']}`}>
         <h1>¡R3C01L Videogames!</h1>
         <h4>El sitio indicado para conocer la información</h4>

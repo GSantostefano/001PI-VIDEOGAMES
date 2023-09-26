@@ -4,40 +4,45 @@ import styles from './FormPage.module.css';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { getGenres } from '../../redux/actions/actions';
+import mensajeBAD from "../../assets/mensajeBAD.png";
+import mensajeOK from "../../assets/mensajeOK.png";
+
 
 // Función para validar los campos del formulario
 const validate = (form) => {
   let errors = {}
   if (!form.name) {
-    errors.name = 'Insert a valid name👆🏻'
-  } else if (!/^[a-zA-Z\s]+$/.test(form.name)) {
-    errors.name = 'The name must only contain letters and spaces';
+    errors.name = '🎮Insert a valid name🕹️';
+  } else if (!/^[a-zA-Z0-9\s]+$/.test(form.name)) {
+    errors.name = 'The name must only contain letters, numbers, and spaces';
   }
   if (!form.description) {
-    errors.description = 'Insert a valid description👆🏻'
+    errors.description = '🎮Insert a valid description🕹️'
   } else if (form.description.length < 10) {
     errors.description = 'Description must be at least 10 characters';
   }
   if (!form.platforms) {
-    errors.platforms = 'Insert valid platforms👆🏻'
+    errors.platforms = '🎮Insert valid platforms🕹️'
   }
   if (!form.image) {
     errors.image = 
-    !form.image.includes('https://' || 'http://')
-    ? 'Insert a valid URL image👆🏻' 
+    !form.image.includes('🎮https://' || 'http://🕹️')
+    ? '🎮Insert a valid URL image🕹️' 
     : ''
   }
   if (!form.released) {
-    errors.released = 'Insert a valid release date👆🏻'
+    errors.released = '🎮Insert a valid release date🕹️'
   }
   if (!form.rating) {
-    errors.rating = 'Insert a valid rating👆🏻'
+    errors.rating = '🎮Insert a valid rating🕹️'
   } else if (!/^[1-5]$/.test(form.rating)) {
-    errors.rating = 'The rating must be between 1 and 5';
+    errors.rating = '🕹️The rating must be between 1 and 5🕹️';
   }
   if (form.genres.length === 0) {
-    errors.genres = 'Select at least one genre👆🏻'
-  }
+  errors.genres = '🎮Select at least one genre🕹️';
+} else {
+  errors.genres = ''; // Reinicia el mensaje de error si hay géneros seleccionados
+}
   return errors;
 }
 
@@ -45,23 +50,26 @@ const FormPage = () => {
 
   const dispatch = useDispatch()
   const allGenres = useSelector((state) => state.genres)
-
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  
   useEffect(() => {
     dispatch(getGenres())
   }, [dispatch, allGenres.length])
 
-  const handleGenres = (event) => {
-    if (!form.genres.includes(event.target.value)) {
+  const handleGenres = (event, genreName) => {
+    if (event.target.checked) {
       setForm({
         ...form,
-        genres: [...form.genres, event.target.value]
-      })
-      setErrors(validate({
-        ...form, 
-        genres: [...form.genres, event.target.value],
-      }))
-    } 
-  }
+        genres: [...form.genres, genreName],
+      });
+    } else {
+      setForm({
+        ...form,
+        genres: form.genres.filter((name) => name !== genreName),
+      });
+    }
+  };
 
   const [form, setForm] = useState({
     name: '',
@@ -87,19 +95,26 @@ const FormPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/videogames/create?name=', form)
-      .then(res => alert('Game created successfully'))
-      .catch(err => alert('Please fill in all the fields'));
+      .then((res) => {
+        setSuccessMessage('Game created successfully');
+        setErrorMessage('');
+      })
+      .catch((err) => {
+        setErrorMessage("something has gone wrong" );
+        setSuccessMessage('');
+      });
+
     setForm({
       name: '',
       description: '',
-      platforms:[],
+      platforms: [],
       image: '',
       released: '',
       rating: '',
       genres: [],
-    })
+    });
   }
-
+  
   const handleInputChange = (e) => {
     setForm({
       ...form,
@@ -110,9 +125,38 @@ const FormPage = () => {
       [e.target.name]: e.target.value,
     }))
   }
-
+  const closeAlerts = () => {
+    setSuccessMessage('');
+    setErrorMessage('');
+  };
   return (
+
+
+    <div>
+<div className={successMessage || errorMessage ? styles['success-overlay'] : styles['error-overlay']}>
+  {successMessage && (
+    <div className={styles['success-alert']}>
+      <p>EXITO!!!</p>
+      <img src={mensajeOK} alt="Descripción de la imagen de éxito" />
+      <button className={styles.btnAlert} onClick={closeAlerts}>Cerrar</button>
+    </div>
+  )}
+  {errorMessage && (
+    <div className={styles['error-alert']}>
+      <p>Something has gone wrong!</p>
+      <img src={mensajeBAD} alt="Descripción de la imagen de error" />
+      <button className={styles.btnAlert} onClick={closeAlerts}>Cerrar</button>
+    </div>
+  )}
+</div>
+           
+
     <div className={styles.formContainer}>
+
+
+
+
+
       <div className={styles.verticalText}>
       <p>CREATE</p>
       <p>VIDEOGAMES</p>
@@ -197,23 +241,38 @@ const FormPage = () => {
         {
           errors.rating && (<p className={styles.error}>{errors.rating}</p>)
         }
-        <section>
-          <label htmlFor="genres" className={styles.label}>Genres: </label>
-          <select onChange={(e) => handleGenres(e)} defaultValue='default' className={styles.select} multiple>
-            <option value="default" disabled >Select Genre</option>
-            {
-              allGenres?.map((genre) => (
-                <option key={genre.name} value={genre.name}>
-                  {genre.name}
-                </option>
-              ))
-            }
-          </select>
-        </section>
-        
+
+<section>
+  <label className={styles.label}>Genres: </label>
+
+      
+
+
+
+
+  <div className={styles.genreList}>
+    {allGenres?.map((genre) => (
+      <label key={genre.name} className={styles.genreItem}>
+        <input
+          type="checkbox"
+          value={genre.name}
+          checked={form.genres.includes(genre.name)}
+          onChange={(e) => handleGenres(e, genre.name)}
+        />
+        <span>{genre.name}</span>
+      </label>
+    ))}
+  </div>
+</section>
+
         {errors.genres && (<p className={styles.error}>{errors.genres}</p>)}
-        <button type="submit" className={styles.button}>Create Videogame</button>
+        <button type="submit" className={styles.button} disabled={Object.values(errors).some((error) => error)}>Create Videogame</button>
       </form>
+
+      
+
+
+      </div>
       </div>
     </div>
   )

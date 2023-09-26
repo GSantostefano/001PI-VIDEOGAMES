@@ -28,8 +28,7 @@ const allGenres = async () => {
     }
   );
   const genreNamesFromDatabase = genresFromDatabase.map(genres => (genres));
-  //console.log(genreNamesFromDatabase);
-  //console.log(genreNamesFromDatabase.length);
+
   return genreNamesFromDatabase;
 }
 module.exports = allGenres;

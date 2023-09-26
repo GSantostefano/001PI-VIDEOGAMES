@@ -13,7 +13,7 @@ const getVideogameByIdController = async(idVideogame) => {
             include: Genre,
         });
         if (DBResponse) {
-            console.log(DBResponse.dataValues);
+            
             const videoGameData = {
                 ...DBResponse.dataValues,
                 genres: DBResponse.Genres.map((genre) => genre.name),
@@ -26,7 +26,7 @@ const getVideogameByIdController = async(idVideogame) => {
         console.log("searching API...");
         const url = `${VG_URL}/${idVideogame}?key=${API_KEY}`;
         const ApiResponse = await axios.get(url);
-        console.log(ApiResponse.data);
+        
         console.log("From API");
         return {
             ...ApiResponse.data,

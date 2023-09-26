@@ -1,4 +1,4 @@
-/* Estilos para el contenedor principal */
+
 .content {
   display: flex;
   align-items: center;
@@ -9,14 +9,12 @@
   letter-spacing: 2px;
 }
 
-/* Estilos para el enlace Home */
 .Home {
   font-size: 30px;
   color: #ffcc00;
   cursor: pointer;
 }
 
-/* Estilos para el botón de búsqueda */
 .btnBuscar {
   font-size:0.8rem;
   padding: 10px 20px;
@@ -29,12 +27,10 @@
   font-family: 'robot', sans-serif;
 }
 
-/* Estilos para el botón de búsqueda al pasar el cursor */
 .btnBuscar:hover {
   background-color: rgba(252, 0, 0, 0.6);
 }
 
-/* Estilos para el campo de entrada de texto */
 .input {
   flex-grow: 1;
   padding: 10px 15px;
@@ -45,8 +41,6 @@
   margin-left: 10px;
   outline: none;
 }
-
-/* Estilos para el campo de entrada de texto al tener foco */
 .input:focus {
   background-color: rgba(252, 0, 0, 0.432);
   border: 1px solid #ffcc00;

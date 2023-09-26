@@ -15,7 +15,6 @@ const OrderFilter = () => {
     dispatch(getGenres());
   }, [dispatch]);
 
-  console.log(">>>>>genres",genres)
 
   const handleFilter = (event) => {
     dispatch(filterVideogame(event.target.value));

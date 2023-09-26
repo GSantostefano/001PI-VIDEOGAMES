@@ -57,17 +57,17 @@
   
 }
 .navLink {
-  text-decoration: none; /* Elimina el subrayado */
-  color: #ff0000; /* Cambia el color a rojo (#ff0000) o el color que desees */
+  text-decoration: none; 
+  color: #ff0000; 
 }
 .landingPageButton::active{
   transform: scale(0.9)
 }
 .Landindlink {
-  color: #ff0000; /* Cambiado a un color rojo */
+  color: #ff0000; 
   cursor: pointer;
 }
-/* Agrega una clase de desvanecimiento */
+
 .fade-out {
   opacity: 0;
   transition: opacity 0.7s ease-out;
@@ -80,6 +80,6 @@
   }
   100% {
     opacity: 0;
-    display: none; /* Esto ocultará el elemento después de la animación */
+    display: none; 
   }
 }

@@ -36,6 +36,7 @@
   font-size: 24px;
   margin-top: 20px;
   animation: text-animation 1s infinite alternate;
+  font-family: 'mariobros', sans-serif;
 }
 
 @keyframes text-animation {

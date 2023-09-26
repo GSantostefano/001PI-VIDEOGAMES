@@ -20,27 +20,27 @@ body {
     padding: 3%;
     color: #fff;
     overflow: hidden;
-    border-radius: 20px; /* Reduje el radio del borde para un aspecto más moderno */
+    border-radius: 20px; 
     
 }
 
 .blackText {
-    font-size: 24px; /* Reduje el tamaño de fuente para una mejor legibilidad */
+    font-size: 24px; 
     font-weight: 700;
     color: #ffcc00;
 }
 .title {
-    font-size: 3rem; /* Reduje el tamaño de fuente para una mejor legibilidad */
+    font-size: 3rem; 
     font-weight: 700;
     color: #ffcc00;
 }
 .title2 {
-    font-size: 3rem; /* Reduje el tamaño de fuente para una mejor legibilidad */
+    font-size: 3rem; 
     font-weight: 700;
     color: #fbfbfb;
 }
 .whiteText {
-    font-size: 20px; /* Tamaño de fuente para el texto en blanco */
+    font-size: 20px; 
     color: #fff;
 }
 .containerBtn{
@@ -55,8 +55,8 @@ body {
 }
 
 .description {
-    font-size: 18px; /* Tamaño de fuente para la descripción */
-    line-height: 1.5; /* Espaciado de línea mejorado para una mejor legibilidad */
+    font-size: 18px; 
+    line-height: 1.5; 
 }
 
 .goback {

@@ -13,7 +13,6 @@ const DetailPage = () => {
   const { id } = useParams();
   const videogame = useSelector((state) => state.id);
   
-  // Loading... state
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -23,7 +22,6 @@ const DetailPage = () => {
       });
   }, [dispatch, id]);
 
-  // Renderiza el componente Loading mientras se carga la información
   if (loading) {
     return <Loading />;
   }
@@ -44,7 +42,7 @@ const DetailPage = () => {
         
         <div className={style.blackText}>Released: <span className={style.whiteText}>{videogame.released}</span></div>
   
-        {/* Mapea las plataformas y muéstralas */}
+    
 
 
         <div className={style.blackText}>Platforms: 

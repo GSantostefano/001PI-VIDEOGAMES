@@ -68,10 +68,7 @@ import {
         };
 
       case FILTER_BY_GENRES:
-          console.log("state.videogamesCopy", state.videogamesCopy);
-          console.log("PAYLOAD", payload);
-        
-          // Filtra desde la API
+      
           const filteredFromApi = state.videogamesCopy.filter((videogame) => {
             if (Array.isArray(videogame.genres)) {
               return videogame.genres.some((genre) => genre.name === payload);
@@ -79,7 +76,6 @@ import {
             return false;
           });
         
-          // Filtra desde la base de datos
           const filteredFromDb = state.videogamesCopy.filter((videogame) => {
             if (Array.isArray(videogame.Genres)) {
               return videogame.Genres.some((genre) => genre.name === payload);
@@ -87,7 +83,6 @@ import {
             return false;
           });
         
-          // Combina los resultados de ambas fuentes
           const filteredVideoGames = [...filteredFromApi, ...filteredFromDb];
         
           return {

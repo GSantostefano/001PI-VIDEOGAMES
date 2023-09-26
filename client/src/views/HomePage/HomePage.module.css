@@ -7,7 +7,7 @@ body {
     background-size: cover;
     width: 100%;
     min-height: 100vh;
-    max-height: 100%; /* Usar 100vh en lugar de 100% para ajustar la altura a la ventana gráfica del navegador */
+    max-height: 100%; 
     overflow-x: hidden;
     font-family: 'robot', sans-serif;
     letter-spacing: 2px;
@@ -15,7 +15,7 @@ body {
   @font-face {
     font-family: 'robot';
     src: url('./font3.ttf') format('woff2');
-    /* Agrega más formatos si la fuente los tiene */
+    
   }
 
 
@@ -34,6 +34,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .botonPagina{
   background-color: rgba(0, 0, 0, 0.2);

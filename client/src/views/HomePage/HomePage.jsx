@@ -47,20 +47,20 @@ function Home() {
     <div>
       <Nav />
       <div>
-        <PageIndex 
-        totalPages={Math.ceil(videogames.length / videogamesPerPage)}
+      <PageIndex 
+      totalPages={Math.ceil(videogames.length / videogamesPerPage)}
          currentPage={currentPage} 
-         onPageChange={paginate} />
+      onPageChange={paginate} />
       </div>
 
       <div>
-        <Cards videogames={currentVideogames} />
+      <Cards videogames={currentVideogames} />
       </div>
 
       <div className={style.botones}>
-        <button onClick={PreviousPage} disabled={currentPage === 1}>
+      <button onClick={PreviousPage} disabled={currentPage === 1}>
           Anterior
-        </button>
+      </button>
 
         <div className={style.pageNum}>{currentPage}</div>
 

@@ -6,5 +6,9 @@ body {
 @font-face {
   font-family: 'robot';
   src: url('./font1.ttf') format('woff2');
-  /* Agrega más formatos si la fuente los tiene */
 }
+
+@font-face {
+  font-family: 'mariobros';
+  src: url('../../assets/SuperMario256.ttf') format('woff2');
+ }
