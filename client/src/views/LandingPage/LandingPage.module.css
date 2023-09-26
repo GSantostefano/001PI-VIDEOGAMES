@@ -14,6 +14,7 @@
   box-shadow: 0 0 25px #ff0000;
   border-radius: 25px;
   top: -15%;
+  
   }
 .background{
     display: flex;
@@ -28,7 +29,10 @@
     height: 100vh;
     overflow-x: hidden;
 }
-
+.title{
+  font-size: 5rem;
+  font-family: 'mariobros', sans-serif;
+}
 .landingPageButton{
   width: fit-content;
   position: relative; 
@@ -42,7 +46,7 @@
   border: 3px solid #ff0000;
   padding: 1% 2%;
   text-transform: uppercase;
-  
+  font-family: 'mariobros', sans-serif;
   margin-bottom: 1%;
   margin-left: 10%;
   margin-right: 10%;

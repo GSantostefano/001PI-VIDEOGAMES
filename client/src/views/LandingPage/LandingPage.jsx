@@ -20,7 +20,7 @@ function Landing() {
     <div className={style.background}>
 
       <div className={`${style.Container} ${showDiv ? '' : style['fade-out']}`}>
-        <h1>¡R3C01L Videogames!</h1>
+        <h1 className={style.title}>¡R3C01L Videogames!</h1>
         <h4>El sitio indicado para conocer la información</h4>
         <h4>De tu proxima aventura gaming</h4>
 
