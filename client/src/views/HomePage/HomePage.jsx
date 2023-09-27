@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getVideogames, setCurrentPage } from "../../redux/actions/actions";
 import style from "./HomePage.module.css";
@@ -11,19 +11,27 @@ function Home() {
   const videogames = useSelector((state) => state.videogames);
   const currentPage = useSelector((state) => state.currentPage);
   const videogamesPerPage = useSelector((state) => state.videogamesPerPage);
+  const totalPages = Math.ceil(videogames.length / videogamesPerPage);
+
+  const [initialLoad, setInitialLoad] = useState(true);
 
   useEffect(() => {
-    if (videogames.length===0){
-    dispatch(getVideogames());
-}
-}, [dispatch,videogames.length]);
+    if (initialLoad) {
+      dispatch(getVideogames()).then(() => {
+        setInitialLoad(false); // Establece initialLoad en false después de la carga inicial
+      });
+    }
+  }, [dispatch, initialLoad]);
+  
 
   const indexOfLastVideogame = currentPage * videogamesPerPage;
   const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage;
   const currentVideogames = videogames.slice(indexOfFirstVideogame, indexOfLastVideogame);
 
   const paginate = (pageNumber) => {
-    dispatch(setCurrentPage(pageNumber));
+    if (videogames.length > 0) {
+      dispatch(setCurrentPage(pageNumber));
+    }
   };
 
   const startPage = (currentPage - 1) * videogamesPerPage;
@@ -47,10 +55,11 @@ function Home() {
     <div>
       <Nav />
       <div>
-      <PageIndex 
-      totalPages={Math.ceil(videogames.length / videogamesPerPage)}
-         currentPage={currentPage} 
-      onPageChange={paginate} />
+      <PageIndex
+          totalPages={Math.ceil(videogames.length / videogamesPerPage)}
+          currentPage={currentPage}
+          onPageChange={paginate}
+        />
       </div>
 
       <div>
@@ -64,9 +73,9 @@ function Home() {
 
         <div className={style.pageNum}>{currentPage}</div>
 
-        <button onClick={NextPage} disabled={endPage >= videogames.length}>
-          Siguiente
-        </button>
+        <button onClick={NextPage} disabled={currentPage >= totalPages}>
+            Siguiente
+          </button>
       </div>
     </div>
   );

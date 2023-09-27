@@ -11,8 +11,18 @@ import {
   FILTER_RATING,
   PAGE,
   SET_CURRENT_PAGE,
-    SET_VIDEOGAMES_PER_PAGE,
+  SET_VIDEOGAMES_PER_PAGE,
+  UPDATE_FILTERS,
 } from "./actions_types";
+
+
+
+export const updateFilters = (filters) => {
+  console.log("filters", filters);
+ return{
+  type: UPDATE_FILTERS,
+  payload: filters,
+}};
 
 export const getVideogames = () => {
   return async (dispatch) => {
@@ -60,6 +70,8 @@ export const getGenres = () => {
     }
   }
 }
+
+
 export const filterByGenres = (payload) => {
   return {
     type: FILTER_BY_GENRES,
@@ -86,8 +98,6 @@ export const filterVideogame = (filter) => {
     payload: filter,
   };
 };
-
-
 
 export const orderVideogames = (order) => {
   return {

@@ -11,9 +11,13 @@ module.exports = (sequelize) => {
     name: {
         type: DataTypes.STRING,
         allownull:false,
-    }
+    },
+},
+{timestamps:false,
 });
-}//exportamos una funciion con la definicion del objeto
+};//exportamos una funciion con la definicion del objeto
+
+
 
 
 //https://api.rawg.io/docs/#tag/genres

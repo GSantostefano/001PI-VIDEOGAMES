@@ -1,6 +1,6 @@
 import style from "./OrderFilter.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { filterVideogame,orderVideogames,filterByGenres,filterByRating } from "../../redux/actions/actions";
+import { filterVideogame,orderVideogames,filterByGenres,filterByRating,updateFilters } from "../../redux/actions/actions";
 import { useState } from "react";
 import { getGenres } from "../../redux/actions/actions";
 import { useEffect } from "react";
@@ -10,14 +10,23 @@ const OrderFilter = () => {
   const [aux, setAux] = useState(false);
   // const [selectedGenre, setSelectedGenre] = useState(false);
   const genres = useSelector((state) => state.genres);
-  
+  const VideogamesALL = useSelector((state) => state.VideogamesALL);
+  const VideogamesApi = useSelector((state) => state.VideogamesApi);
+  const VideogamesDB = useSelector((state) => state.VideogamesDB);
+
   useEffect(() => {
     dispatch(getGenres());
   }, [dispatch]);
 
 
   const handleFilter = (event) => {
-    dispatch(filterVideogame(event.target.value));
+    const filterValue = event.target.value;
+    dispatch(filterVideogame(filterValue)); // Actualiza el filtro en el estado global
+    dispatch(updateFilters(filterValue));
+    // Actualiza las variables globales según la opción seleccionada
+
+
+
   };
 
   
@@ -26,7 +35,7 @@ const OrderFilter = () => {
       dispatch(filterByRating(event.target.value));
     } else {
       dispatch(orderVideogames(event.target.value));
-      setAux(!aux);
+    
     }
   }
 
@@ -41,6 +50,7 @@ const OrderFilter = () => {
     <div  className={style.orden}>
         <div >
           <select onChange={handleSelectChange} className={style.option}>
+          <option value="default" disabled>Order</option>
             <option value="AscendingAZ">Ascendente A-Z</option>
             <option value="DescendingZA">Descendente Z-A</option>
             <option value="ASC">Rating lowest</option>
@@ -56,9 +66,10 @@ const OrderFilter = () => {
         
         {
           genres?.map((genre) => (
-            <option key={genre.name} value={genre.name}>
-              
-              {genre.name}
+            <option 
+            key={genre.name} 
+            value={genre.name}>
+            {genre.name}
             </option>
         ))
         }

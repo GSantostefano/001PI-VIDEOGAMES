@@ -34,6 +34,8 @@ module.exports = (sequelize) => {
       type: DataTypes.FLOAT,
       allowNull: true,
       defaultValue: "Unknown"
-    }
+    },
+  },
+  {timestamps:false,
   });
 };//exportamos una funciion con la definicion del objeto

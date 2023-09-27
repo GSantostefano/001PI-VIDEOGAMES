@@ -29,21 +29,23 @@ const Cards = ({videogames}) => {
 
   return (
     <div className={style.grid}>
-      {videogames.map((videogame) => (
-         
-
-          <Card className={style.card}
-          // key={videogame.id}
+    {videogames.length === 0 ? (
+      <div className={style.cartel}>
+        No se encontraron videojuegos. Recargando All VIDEOJUEGOS....
+      </div>
+    ) : (
+      videogames.map((videogame) => (
+        <Card
+          key={videogame.id}
           id={videogame.id}
           name={videogame.name}
-          // background_image={videogame.background_image}
-          image={videogame.image?videogame.image:videogame.background_image}
-          />
-        
-        
-
-      ))}
-    </div>
+          image={videogame.image ? videogame.image : videogame.background_image}
+        />
+      ))
+    )}
+  </div>
+    
+  
   );
   
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getVideogamesId } from "../../redux/actions/actions";
-import { Link } from "react-router-dom";
+import {useNavigate } from 'react-router-dom';
 import style from "./DetailPage.module.css";
 import Loading from "../../components/Loading/Loading";
 
@@ -12,6 +12,12 @@ const DetailPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const videogame = useSelector((state) => state.id);
+  
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate('/home');
+  };
   
   const [loading, setLoading] = useState(true);
 
@@ -42,9 +48,6 @@ const DetailPage = () => {
         
         <div className={style.blackText}>Released: <span className={style.whiteText}>{videogame.released}</span></div>
   
-    
-
-
         <div className={style.blackText}>Platforms: 
 
         <span className={style.whiteText}>
@@ -69,7 +72,11 @@ const DetailPage = () => {
         <div className={style.blackText}>Website: <span className={style.whiteText}>{videogame.website}</span></div>
         <div className={style.description} dangerouslySetInnerHTML={{ __html: videogame.description }}></div>
         <div className={style.containerBtn}>
-        <Link to="/home"><button className={style.goback}>VOLVER</button></Link>
+        
+        <button onClick={handleGoBack} className={style.goback}>
+                VOLVER
+        </button>
+      
       </div>
       </div>
   

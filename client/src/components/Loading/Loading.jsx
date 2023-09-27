@@ -4,8 +4,9 @@ import style from "./Loading.module.css";
 const Loading = () => {
   return (
     <div className={style.loading}>
-      <div className={style.spinner}></div>
+      
       <p>. . . . CARGANDO. . . . </p>
+      <div className={style.spinner}></div>
     </div>
   );
 };
