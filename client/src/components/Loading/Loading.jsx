@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <div className={style.loading}>
       
-      <p>. . . . CARGANDO. . . . </p>
+      <p>. . . . LOADING. . . . </p>
       <div className={style.spinner}></div>
     </div>
   );

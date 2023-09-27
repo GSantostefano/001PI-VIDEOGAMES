@@ -31,7 +31,8 @@ const Cards = ({videogames}) => {
     <div className={style.grid}>
     {videogames.length === 0 ? (
       <div className={style.cartel}>
-        No se encontraron videojuegos. Recargando All VIDEOJUEGOS....
+        No games found. Reloading 
+        All VIDEOGAMES....
       </div>
     ) : (
       videogames.map((videogame) => (
