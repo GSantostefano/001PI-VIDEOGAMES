@@ -45,7 +45,7 @@ const getVideogameByNameController = async (nameSolicitado) => {
     return console.error("No videogames with this name were found");
   } else {
     // Devolver los primeros 15 videojuegos encontrados
-    return allVideogames.slice(0, 15);
+    return allVideogames.slice(0, 1);
   }
 };
 

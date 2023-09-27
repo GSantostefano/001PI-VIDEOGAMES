@@ -25,7 +25,7 @@ import {
     plataforms:[],
     pageActual: 1,
     currentPage: 1,
-    videogamesPerPage: 15,
+    videogamesPerPage: 9,
 
     allVideogamesAPI: [],
     allVideogamesBD:[],

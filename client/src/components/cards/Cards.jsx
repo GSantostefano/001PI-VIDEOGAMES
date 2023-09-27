@@ -39,6 +39,7 @@ const Cards = ({videogames}) => {
           key={videogame.id}
           id={videogame.id}
           Genres={videogame.Genres||videogame.genres}
+          rating={videogame.rating}
           name={videogame.name}
           image={videogame.image ? videogame.image : videogame.background_image}
         />

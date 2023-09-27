@@ -105,14 +105,7 @@ const FormPage = () => {
     });
   };
   
-  
-
-
-
-
-
-
-  const closeAlerts = () => {
+    const closeAlerts = () => {
     setSuccessMessage('');
     setErrorMessage('');
   };
@@ -123,6 +116,8 @@ const FormPage = () => {
       errors.name = '🎮Insert a valid name🕹️';
     } else if (!/^[a-zA-Z0-9\s]+$/.test(form.name)) {
       errors.name = 'The name must only contain letters, numbers, and spaces';
+    } else if (form.name.length > 50) { // Cambia 50 al número máximo de caracteres permitidos
+      errors.name = 'The name is too long. Maximum length is 50 characters.';
     }
     
     if (!form.description) {
