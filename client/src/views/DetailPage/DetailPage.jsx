@@ -68,13 +68,15 @@ const DetailPage = () => {
         <div className={style.blackText}>Genres: 
         <span className={style.whiteText}>{videogame.genres?.map(genre => genre).join(', ')}
         </span></div>
+        
         <div className={style.blackText}>Rating: <span className={style.whiteText}>{videogame.rating}</span></div>
         <div className={style.blackText}>Website: <span className={style.whiteText}>{videogame.website}</span></div>
         <div className={style.description} dangerouslySetInnerHTML={{ __html: videogame.description }}></div>
+        <div className={style.blackText}>ID: <span className={style.whiteText}>{videogame.id}</span></div>
         <div className={style.containerBtn}>
         
         <button onClick={handleGoBack} className={style.goback}>
-                VOLVER
+                BACK
         </button>
       
       </div>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
   
-const {id, name,image} = props;
+const {id, name,image,Genres} = props;
 const noImage= "../../../public/detail.jpg";
 
  
@@ -30,7 +30,9 @@ const noImage= "../../../public/detail.jpg";
     </div>
   </Link>
   <h3 className={style.name}>{name}</h3>
-  <p className={style.id}>ID: {id}</p>
+  <div className={style.divId}><p className={style.id}>{Genres?.map(genre => genre.name).join(', ')}</p></div>
+  
+  
   </div>
   );
 };

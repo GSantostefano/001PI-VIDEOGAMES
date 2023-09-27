@@ -45,7 +45,7 @@ const FormPage = () => {
     image: true,
     released: true,
     rating: true,
-    genres: true,
+    genres: '',
   });
 
   const handleSubmit = (e) => {
@@ -83,20 +83,28 @@ const FormPage = () => {
     }))
   }
 
-const handleGenres = (event, genreName) => {
+  const handleGenres = (event, genreName) => {
+    const selectedGenres = [...form.genres];
+  
     if (event.target.checked) {
-      setForm({
-        ...form,
-        genres: [...form.genres, genreName],
-      });
+      selectedGenres.push(genreName);
     } else {
-      setForm({
-        ...form,
-        genres: form.genres.filter((name) => name !== genreName),
-      });
+      const index = selectedGenres.indexOf(genreName);
+      if (index !== -1) {
+        selectedGenres.splice(index, 1);
+      }
     }
-  };
 
+    setForm({
+      ...form,
+      genres: selectedGenres,
+    });
+    setErrors({
+      ...errors,
+      genres: selectedGenres.length < 1 ? 'Select at least one genre' : '',
+    });
+  };
+  
   
 
 
@@ -139,11 +147,11 @@ const handleGenres = (event, genreName) => {
     } else if (!/^\d+(\.\d+)?$/.test(form.rating) || parseFloat(form.rating) < 1 || parseFloat(form.rating) > 5) {
       errors.rating = '🕹️The rating must be a number between 1 and 5🕹️';
     }
-    if (form.genres.length === 0) {
-    errors.genres = '🎮Select at least one genre🕹️';
-  } else {
-    errors.genres = ''; // Reinicia el mensaje de error si hay géneros seleccionados
-  }
+    if (form.genres.length < 1 || form.genres.length > 10) {
+      errors.genres = 'Select at least one genre';
+    } else {
+      errors.genres = '';
+    }
     return errors;
   }
   

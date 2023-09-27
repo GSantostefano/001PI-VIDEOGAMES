@@ -49,65 +49,52 @@ import {
       }
 
 
-  case FILTER_BY_GENRES:
-    console.log("VideogamesALL", state.VideogamesALL);
-    console.log("VideogamesApi", state.VideogamesApi);
-    console.log("VideogamesDB", state.VideogamesDB);
-    console.log("state.allVideogamesAPI",state.allVideogamesAPI);
-    console.log("state.allVideogamesBD",state.allVideogamesBD);
-    console.log("state.videogamesOrigin",state.videogamesOrigin);
-
-
-  const selectedGenre = payload;
-  const auxAPI = state.allVideogamesAPI;
-  const auxBD = state.allVideogamesBD;
-  const auxALL = state.videogamesOrigin;
-  
-
-if (state.VideogamesApi){
-  console.log("aca paso if 1");
-  console.log("auxAPI",auxAPI);
-
-  let filteredVideoGames = auxAPI.filter((videogame) => {
-    if (Array.isArray(videogame.genres)){
-      return videogame.genres.some((genre) => genre.name === selectedGenre);
-    }
-  })  
-  console.log("Nuevo estado:1", {
-    ...state,
-    videogames: filteredVideoGames
-  });
-  return{...state,videogames: filteredVideoGames ?? [],currentPage: 1,}
-}
-
-else if (state.VideogamesDB){
-  console.log("aca paso if 2");
-  console.log("auxBD",auxBD);
-  let filteredVideoGames = auxBD.filter((videogame) => {
-    if (Array.isArray(videogame.Genres)){
-      return videogame.Genres.some((genre) => genre.name === selectedGenre);
-    }
-  })
-  console.log("Nuevo estado:2", {
-    ...state,
-    videogames: filteredVideoGames
-  });
-  return{...state,videogames: filteredVideoGames ?? [],currentPage: 1,}
-}
-else if (state.VideogamesALL){
-  console.log("aca paso if 3");
-  console.log("auxALL",auxALL);
-  let  filteredVideoGames = auxALL.filter((videogame) => {
-    if (Array.isArray(videogame.Genres)){
-      return videogame.Genres.some((genre) => genre.name === selectedGenre);
-    }
-  })  
-  console.log("Nuevo estado:3", {
-    ...state,
-    videogames: filteredVideoGames
-  });
-  return{...state,videogames: filteredVideoGames ?? [],currentPage: 1,}
-}
+      case FILTER_BY_GENRES:
+        const selectedGenre = payload;
+        const auxAPI = state.allVideogamesAPI;
+        const auxBD = state.allVideogamesBD;
+        const auxALL = state.videogamesOrigin;
+      
+        let filteredVideoGames = [];
+      
+        if (state.VideogamesALL) {
+          console.log("aca paso if 3");
+          console.log("auxALL", auxALL);
+      
+          // Combinar resultados de API y BD
+          filteredVideoGames = [...auxAPI, ...auxBD].filter((videogame) => {
+            if (Array.isArray(videogame.genres) || Array.isArray(videogame.Genres)) {
+              return (
+                videogame.genres?.some((genre) => genre.name === selectedGenre) ||
+                videogame.Genres?.some((genre) => genre.name === selectedGenre)
+              );
+            }
+          });
+        }else if (state.VideogamesDB) {
+          console.log("aca paso if 2");
+          console.log("auxBD", auxBD);
+      
+          filteredVideoGames = auxBD.filter((videogame) => {
+            if (Array.isArray(videogame.Genres)) {
+              return videogame.Genres.some((genre) => genre.name === selectedGenre);
+            }
+          });
+        } else if (state.VideogamesApi) {
+          console.log("aca paso if 1");
+          console.log("auxAPI", auxAPI);
+      
+          filteredVideoGames = auxAPI.filter((videogame) => {
+            if (Array.isArray(videogame.genres)) {
+              return videogame.genres.some((genre) => genre.name === selectedGenre);
+            }
+          });
+        } 
+      
+return {
+  ...state,
+  videogames: filteredVideoGames ?? [],
+  currentPage: 1,
+};
 
 
   case FILTER:

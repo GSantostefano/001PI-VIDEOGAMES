@@ -40,7 +40,12 @@
   .id {
     color: #fff;
     margin-top: 0;
+    overflow: hidden;
     
+  }
+  .divId{
+    overflow: hidden;
+    max-height: 20px;
   }
   
   .grid {

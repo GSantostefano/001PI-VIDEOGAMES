@@ -31,14 +31,14 @@ const Cards = ({videogames}) => {
     <div className={style.grid}>
     {videogames.length === 0 ? (
       <div className={style.cartel}>
-        No games found. Reloading 
-        All VIDEOGAMES....
+        No games found. Reloading All VIDEOGAMES....
       </div>
     ) : (
       videogames.map((videogame) => (
         <Card
           key={videogame.id}
           id={videogame.id}
+          Genres={videogame.Genres||videogame.genres}
           name={videogame.name}
           image={videogame.image ? videogame.image : videogame.background_image}
         />
