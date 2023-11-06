@@ -9,7 +9,7 @@
 ---
 ## **📖 ENUNCIADO GENERAL**
 
-Este proyecto es una aplicación web a partir de la API [**rawg**](https://rawg.io/apidocs) en la que se puede:
+Este proyecto es una aplicación web a partir de la API  [**rawg**](https://rawg.io/apidocs)  en la que se puede:
 
 -  Buscar videojuegos.
 -  Visualizar la información de los videojuegos.
@@ -19,12 +19,10 @@ Este proyecto es una aplicación web a partir de la API [**rawg**](https://rawg.
 
 ### **🖱 FRONT-END**
 
-Desarrolla una aplicación que utiliza **React** y **Redux** que contiene las siguientes vistas:
-
 **📍 LANDING PAGE |**una página de inicio con:
 
--  Una imagen de fondo representativa al proyecto.
--  Botón para ingresar a la **`home page`**.
+Botón para ingresar a la **`home page`**.
+  
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/db3c445c-0c93-42e4-b31d-79a6da0b8b39)
 
 <br />
@@ -34,15 +32,15 @@ Desarrolla una aplicación que utiliza **React** y **Redux** que contiene las si
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/a33b1fbd-7ac7-42c2-aadf-9e2da950a9a0)
 
--  SearchBar: un input de búsqueda para encontrar videojuegos por nombre.
+SearchBar: un input de búsqueda para encontrar videojuegos por nombre.
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/f7db9817-eecf-4a5a-bb98-aad55a2090c5)
 
--  Botones/Opciones para **filtrar** por género, y por si su origen es de la API o de la base de datos (creados por nosotros desde el formulario).
--  Botones/Opciones para **ordenar** tanto ascendentemente como descendentemente los videojuegos por orden alfabético y por rating.
+Botones/Opciones para **filtrar** por género, y por si su origen es de la API o de la base de datos (creados por nosotros desde el formulario).
+Botones/Opciones para **ordenar** tanto ascendentemente como descendentemente los videojuegos por orden alfabético y por rating.
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/e4b73405-78fe-4907-a2a3-e2f48f7d3d51)
 
--  Paginado: el listado de videojuegos.
+Paginado: el listado de videojuegos.
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/160bd030-3060-4a8d-ac5f-8755d39b3ff5)
 
