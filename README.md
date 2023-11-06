@@ -30,24 +30,38 @@ Desarrolla una aplicación que utiliza **React** y **Redux** que contiene las si
 <br />
 
 **📍 HOME PAGE |** la página principal de tu SPA debe contener:
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/3912ca91-5543-449c-a905-834473910109)
+
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/a33b1fbd-7ac7-42c2-aadf-9e2da950a9a0)
 
 -  SearchBar: un input de búsqueda para encontrar videojuegos por nombre.
+-  ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/f7db9817-eecf-4a5a-bb98-aad55a2090c5)
+
 -  Sector en el que se vea un listado de cards con los videojuegos. Al iniciar deberá cargar los primeros resultados obtenidos desde la ruta **`GET /videogames`** y deberá mostrar su:
    -  Imagen.
    -  Nombre.
    -  Géneros.
 -  Cuando se le hace click a una Card deberá redirigir al detalle de ese videojuego específico.
+-  
+
 -  Botones/Opciones para **filtrar** por género, y por si su origen es de la API o de la base de datos (creados por nosotros desde el formulario).
+
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/e4b73405-78fe-4907-a2a3-e2f48f7d3d51)
+
 -  Botones/Opciones para **ordenar** tanto ascendentemente como descendentemente los videojuegos por orden alfabético y por rating.
--  Paginado: el listado de videojuegos se hará por partes. Tu SPA debe contar con un paginado que muestre un total de 15 videojuegos por página.
+-  Paginado: el listado de videojuegos.
 
-**⚠️ IMPORTANTE**: se deben mostrar tanto los videojuegos traidos desde la API como así también los de la base de datos, pero **NO** está permitido almacenar en la base de datos los videojuegos de la API. **Solamente se pueden guardar aquellos creados desde el form**.
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/160bd030-3060-4a8d-ac5f-8755d39b3ff5)
 
-**⚠️ IMPORTANTE:** debido a que en la API existen alrededor de 500.000 videojuegos, por cuestiones de performance puedes tomar la simplificación de obtener y **paginar** los primeros 100 videojuegos.
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/da2ab3bf-a05f-4384-a216-82abd994349b)
+
+**⚠️ IMPORTANTE**: tanto los videojuegos traidos desde la API como así también los de la base de datos.
 
 <br />
 
 **📍 DETAIL PAGE |** en esta vista se deberá mostrar toda la información específica de un videojuego:
+
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/aa0b5fb6-4aa1-4759-8b5c-f2d9f372a073)
 
 -  ID.
 -  Nombre.
@@ -62,7 +76,9 @@ Desarrolla una aplicación que utiliza **React** y **Redux** que contiene las si
 
 **📍 FORM PAGE |**: en esta vista se encontrará el formulario para crear un nuevo videojuego.
 
-Este formulario debe ser **controlado completamente con JavaScritp**. No se pueden utilizar validaciones HTML, ni utilizar librerías especiales para esto. Debe contar con los siguientes campos:
+Este formulario **controlado completamente con JavaScritp**.
+
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/19f81d77-bdea-4cb8-a1f7-29129b0a1ab1)
 
 -  Nombre.
 -  Imagen.
@@ -73,21 +89,7 @@ Este formulario debe ser **controlado completamente con JavaScritp**. No se pued
 -  Posibilidad de seleccionar/agregar varios géneros en simultáneo.
 -  Botón para crear el nuevo videojuego.
 
-> [**IMPORANTE**]: es requisito que el formulario de creación esté validado sólo con JavaScript. Puedes agregar las validaciones que consideres. Por ejemplo: que el nombre del videojuego no pueda contener símbolos, o que el rating no pueda exceder determinado valor, etc.
-
-<br />
-
----
-
-<br />
-
-### **🖱 TESTING**
-
-Ten en cuenta que en esta instancia no es obligatorio el desarrollo de testing para tu aplicación. De igual manera, te desafiamos a que los hagas, ¡ya que suman puntos!
-
--  Al menos tener un componente del frontend con sus tests respectivos.
--  Al menos tener dos rutas del backend con sus tests respectivos.
--  Al menos tener un modelo de la base de datos con sus tests respectivos.
+> [**IMPORANTE**]:El formulario de creación está validado sólo con JavaScript.
 
 <br />
 
