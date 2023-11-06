@@ -85,8 +85,6 @@ o
 
 Este formulario **controlado completamente con JavaScritp**.
 
-![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/19f81d77-bdea-4cb8-a1f7-29129b0a1ab1)
-
 -  Nombre.
 -  Imagen.
 -  Descripción.
@@ -96,6 +94,7 @@ Este formulario **controlado completamente con JavaScritp**.
 -  Posibilidad de seleccionar/agregar varios géneros en simultáneo.
 -  Botón para crear el nuevo videojuego.
 
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/19f81d77-bdea-4cb8-a1f7-29129b0a1ab1)
 
 <br />
 
