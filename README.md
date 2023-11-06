@@ -56,12 +56,6 @@ Paginado: el listado de videojuegos.
 
 **📍 DETAIL PAGE |** en esta vista se deberá mostrar toda la información específica de un videojuego:
 
-![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/aa0b5fb6-4aa1-4759-8b5c-f2d9f372a073)
-
-![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/27fb329e-6947-49e7-a828-c1c953de5931)
-
-![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/567247e8-f85c-4246-91b4-a8decc4cb45a)
-
 -  ID.
 -  Nombre.
 -  Imagen.
@@ -70,6 +64,13 @@ Paginado: el listado de videojuegos.
 -  Fecha de lanzamiento.
 -  Rating.
 -  Géneros.
+
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/aa0b5fb6-4aa1-4759-8b5c-f2d9f372a073)
+
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/27fb329e-6947-49e7-a828-c1c953de5931)
+
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/567247e8-f85c-4246-91b4-a8decc4cb45a)
+
 
 <br />
 
