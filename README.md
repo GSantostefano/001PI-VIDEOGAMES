@@ -96,7 +96,6 @@ Este formulario **controlado completamente con JavaScritp**.
 -  Posibilidad de seleccionar/agregar varios géneros en simultáneo.
 -  Botón para crear el nuevo videojuego.
 
-> [**IMPORANTE**]:El formulario de creación está validado sólo con JavaScript.
 
 <br />
 
