@@ -2,15 +2,7 @@
 
 # **¡R3C01L Videogames!** | Proyecto Individual
 
-## **📌 OBJETIVOS**
-
--  Una Single Page Application utlizando las tecnologías: **React**, **Redux**, **Node**, **Express** y **Sequelize**.
--  Poner en práctica recursos básicos de estilos y diseño (UX : UI).
--  Afirmar y conectar los conceptos aprendidos en la carrera.
--  Aprender mejores prácticas.
--  Aprender y practicar el workflow de GIT.
--  Utilizar y practicar testing.
-
+-  Una Single Page Application que utiliza las tecnologías: **React**, **Redux**, **Node**, **Express** y **Sequelize**.
 <br />
 
 ---
@@ -23,8 +15,6 @@ Este proyecto es una aplicación web a partir de la API [**rawg**](https://rawg.
 -  Filtrarlos.
 -  Ordenarlos.
 -  Crear nuevos videojuegos.
-
-<div align="center">
 
 ### **🖱 FRONT-END**
 
