@@ -35,20 +35,13 @@ Desarrolla una aplicación que utiliza **React** y **Redux** que contiene las si
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/a33b1fbd-7ac7-42c2-aadf-9e2da950a9a0)
 
 -  SearchBar: un input de búsqueda para encontrar videojuegos por nombre.
--  ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/f7db9817-eecf-4a5a-bb98-aad55a2090c5)
-
--  Sector en el que se vea un listado de cards con los videojuegos. Al iniciar deberá cargar los primeros resultados obtenidos desde la ruta **`GET /videogames`** y deberá mostrar su:
-   -  Imagen.
-   -  Nombre.
-   -  Géneros.
--  Cuando se le hace click a una Card deberá redirigir al detalle de ese videojuego específico.
--  
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/f7db9817-eecf-4a5a-bb98-aad55a2090c5)
 
 -  Botones/Opciones para **filtrar** por género, y por si su origen es de la API o de la base de datos (creados por nosotros desde el formulario).
+-  Botones/Opciones para **ordenar** tanto ascendentemente como descendentemente los videojuegos por orden alfabético y por rating.
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/e4b73405-78fe-4907-a2a3-e2f48f7d3d51)
 
--  Botones/Opciones para **ordenar** tanto ascendentemente como descendentemente los videojuegos por orden alfabético y por rating.
 -  Paginado: el listado de videojuegos.
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/160bd030-3060-4a8d-ac5f-8755d39b3ff5)
