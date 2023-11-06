@@ -1,4 +1,4 @@
-![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/df16f2cb-4537-42d5-ab83-7c6ac8992b0b)![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/316763be-abe0-43c0-9aa7-ced94a07be1d)
 
 # **¡R3C01L Videogames!** | Proyecto Individual
