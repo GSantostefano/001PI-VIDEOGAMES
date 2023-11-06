@@ -14,7 +14,14 @@
   box-shadow: 0 0 25px #ff0000;
   border-radius: 25px;
   top: -15%;
+  opacity: 1; /* Establecer la opacidad inicial en 1 (completamente visible) */
+  transition: opacity 11s ease;
   }
+  .fade-out {
+    opacity: 0;
+    transition: opacity 1.5s ease; /* Duración de la transición de 1 segundo (ajusta según desees) */
+  }
+  
 .background{
     display: flex;
     justify-content: center;

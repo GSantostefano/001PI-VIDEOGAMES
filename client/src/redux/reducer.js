@@ -13,7 +13,7 @@ const reducer = (state = initialState, { type, payload }) => {
       return{
         ...state,
         videogames: state.gamesFromDB
-      };
+      }
     case POST_VIDEOGAME:
       return {
         ...state,
@@ -52,7 +52,8 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         videogames: genresToFilter,
-        page: 1};
+        page: 1    
+      }
     case LOOKING:
       return {
         ...state,

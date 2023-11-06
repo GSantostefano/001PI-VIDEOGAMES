@@ -23,9 +23,13 @@ server.use(morgan('dev'));
 // Configura las cabeceras CORS para permitir solicitudes desde un origen específico.
 server.use((req, res, next) => {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // update to match the domain you will make the request from
 =======
   res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:3000'); // Actualiza con tu dominio.
+>>>>>>> Stashed changes
+=======
+  res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:3000' || 'http://localhost:3000' ); // update to match the domain you will make the request from
 >>>>>>> Stashed changes
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');

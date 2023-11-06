@@ -6,6 +6,7 @@ export function showDBgames() {
         type: SHOW_DB_GAMES,
     }
 }
+
 export function postVideogame(videogameCreado) {
     return async function(dispatch) {
         try {        
@@ -19,6 +20,7 @@ export function postVideogame(videogameCreado) {
         }
     }
 }
+
 export function addVideogames() {
     return async function(dispatch) {
         try {
@@ -32,24 +34,28 @@ export function addVideogames() {
         }
     }
 }
+
 export function filterByName(payload) {
     return {
         type: FILTER_NAMES,
         payload: payload
     }
 }
+
 export function filterByRating(payload) {
     return {
         type: FILTER_RATING,
         payload: payload
     }
 }
+
 export function filterByGenres(genreString) {
     return { 
         type: FILTER_GENRES,
         payload: genreString
     }
 } 
+
 export function searching(name) {
     return async function(dispatch) {
         try {
@@ -78,6 +84,7 @@ export function reset() {
     type: RESET,
   };
 }
+
 export function prev() {
   return {
     type: PREV,
@@ -88,6 +95,7 @@ export function next() {
     type: NEXT,
   };
 }
+
 export function reload() {
     return {
         type: RELOAD,
