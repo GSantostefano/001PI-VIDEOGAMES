@@ -8,7 +8,7 @@
 ---
 ## **📖 ENUNCIADO GENERAL**
 
-Este proyecto es una aplicación web a partir de la API [**rawg**](https://rawg.io/apidocs) en la que se pueda:
+Este proyecto es una aplicación web a partir de la API [**rawg**](https://rawg.io/apidocs) en la que se puede:
 
 -  Buscar videojuegos.
 -  Visualizar la información de los videojuegos.
