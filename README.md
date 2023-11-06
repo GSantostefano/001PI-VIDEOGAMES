@@ -31,7 +31,7 @@ Botón para ingresar a la **`home page`**.
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/3912ca91-5543-449c-a905-834473910109)
 
-Un loading mientras cargan los videojuegos.
+Un **📍 Loading |** mientras cargan los videojuegos.
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/a33b1fbd-7ac7-42c2-aadf-9e2da950a9a0)
 
@@ -55,7 +55,7 @@ Paginado: el listado de videojuegos.
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/160bd030-3060-4a8d-ac5f-8755d39b3ff5)
 
-o
+y
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/da2ab3bf-a05f-4384-a216-82abd994349b)
 
