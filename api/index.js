@@ -10,7 +10,7 @@
 |_|  |___||___||___|  |__/ |_| |_n_| \__||_|\\  |__/ |___| \_/ |___||___| \_/ |_|  |___||_|\\
 
  */
-//     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~holis
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
@@ -19,6 +19,6 @@ require('dotenv').config();
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   server.listen(process.env.BACKEND_PORT, () => {
-    console.log(`%s listening at ${process.env.BACKEND_PORT}`); // eslint-disable-line no-console
+    console.log(`% listening at holisss andara?`); // eslint-disable-line no-console
   });
 });

@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    plataforms: {
+    platforms: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -30,15 +30,12 @@ module.exports = (sequelize) => {
       type: DataTypes.DATEONLY,
       allowNull: false,
     },
-    website: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      defaultValue: "Unknown"
-    },
     rating: {
       type: DataTypes.FLOAT,
       allowNull: true,
       defaultValue: "Unknown"
-    }
+    },
+  },
+  {timestamps:false,
   });
 };//exportamos una funciion con la definicion del objeto

@@ -1,129 +1,55 @@
-import Card from "../card/card";
-import Paginate from "../paginate/paginate";
-import style from "./cards.module.css";
+import style from "./Cards.module.css";
+import Card from "../card/Card";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getVideogames } from "../../redux/actions/actions";
+import Loading from "../Loading/Loading"; 
 
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+const Cards = ({videogames}) => {
 
-import {filterByName,filterByGenres, filterByRating, reset } from "../../redux/actions";
+  const allVideogames = useSelector((state) => state.videogames);
 
-
-export default function Cards() {
-
-  const videogames = useSelector((state) => state.videogames)
-  const page = useSelector(state => state.page)
-  
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true); // Agrega el estado loading
 
-  let videoGamesPage = [];
-  let cantPage = 1;
-
-  if (videogames.length > 0) {
-    const cantCharPerPage = 15;
-    let desde = (page - 1) * cantCharPerPage;
-    let hasta = page * cantCharPerPage;
-
-    cantPage = Math.floor(videogames.length / cantCharPerPage);
-    videoGamesPage = videogames?.slice(desde, hasta);
-  } 
-
-  function handleOrder(event) {
-    dispatch(filterByName(event.target.value));
-    
-  }
-  function handleGenres(event) {
-    dispatch(filterByGenres(event.target.value));
-  }
-
-  function handleRating(event) {
-    dispatch(filterByRating(event.target.value));
-  }
-
-  function handleReset() {
-    dispatch(reset());
-
-    const selectElements = document.getElementsByTagName("select");
-    for (let select of selectElements) {
-      select.selectedIndex = 0;
+  useEffect(() => {
+    if (allVideogames.length === 0) {
+      dispatch(getVideogames())
+        .then(() => {
+          setLoading(false); // Cuando la carga se completa, establece loading en false
+        });
+    } else {
+      setLoading(false); // Si ya hay datos en el estado, establece loading en false
     }
-  }
+  }, [dispatch, allVideogames.length]);
 
- 
+  if (loading) {
+    return <Loading />; // Muestra el componente Loading mientras se carga
+  }
 
   return (
-    <div className={style.cardsContainer}>
-      <div className={style.filterOptions}>
-        <p className={style.ordenarPor}>Sort by: </p>
-        <div className={style.options}>
-          <label htmlFor="a-z">Abc </label>
-          <select name="a-z" onChange={handleOrder} defaultValue="">
-            <option value="" disabled>
-              --Select--
-            </option>
-            <option value="A"> A - Z </option>
-            <option value="D"> Z - A </option>
-          </select>
-        </div>
-
-        <div className={style.options}>
-          <label htmlFor="genero">Genres </label>
-          <select name="genero" onChange={handleGenres} defaultValue="">
-            <option value="" disabled>
-              --Select--
-            </option>
-            <option value="Action">Action</option>
-            <option value="Inide">Inide</option>
-            <option value="Adventure">Adventure</option>
-            <option value="RPG">RPG</option>
-            <option value="Strategy">Strategy</option>
-            <option value="Shooter">Shooter</option>
-            <option value="Casual">Casual</option>
-            <option value="Simulation">Simulation</option>
-            <option value="Puzzle">Puzzle</option>
-            <option value="Arcade">Arcade</option>
-            <option value="Platformer">Platformer</option>
-            <option value="Massively Multiplayer">Massively Multiplayer</option>
-            <option value="Racing">Racing</option>
-            <option value="Sports">Sports</option>
-            <option value="Fighting">Fighting</option>
-            <option value="Board Games">Board Games</option>
-            <option value="Educational">Educational</option>
-            <option value="Card">Card</option>
-          </select>
-        </div>
-
-        <div className={style.options}>
-          <label htmlFor="rating">Rating </label>
-          <select name="rating" onChange={handleRating} defaultValue="">
-            <option value="" disabled>
-              --Select--
-            </option>
-            <option value="ASC">Lowest</option>
-            <option value="DES">Best</option>
-          </select>
-        </div>
-
-        <button className={style.button} onClick={handleReset}> Reset </button>
+    <div className={style.grid}>
+    {videogames.length === 0 ? (
+      <div className={style.cartel}>
+        No games found. Reloading All VIDEOGAMES....
       </div>
-
-      <div className={style.cards}>
-        {videoGamesPage.length > 0
-        ? videoGamesPage.map((videogame, index) => {
-          return (
-            <Card
-              key={index}
-              id={videogame.id}
-              nombre={videogame.nombre}
-              imagen={videogame.imagen}
-            />
-          );
-        })
-        : <div className={style.notFound}>No videogames found.</div>
-
-      }
-      </div>
-
-      <Paginate page={page} cantPage={cantPage} />
-    </div>
+    ) : (
+      videogames.map((videogame) => (
+        <Card
+          key={videogame.id}
+          id={videogame.id}
+          Genres={videogame.Genres||videogame.genres}
+          rating={videogame.rating}
+          name={videogame.name}
+          image={videogame.image ? videogame.image : videogame.background_image}
+        />
+      ))
+    )}
+  </div>
+    
+  
   );
-}
+  
+};
+
+export default Cards;

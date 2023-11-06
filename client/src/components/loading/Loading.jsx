@@ -1,14 +1,14 @@
-import React from 'react'
-import styles from './Loading.module.css'
+import React from "react";
+import style from "./Loading.module.css";
 
 const Loading = () => {
   return (
-    <div className={styles.loader}>
-      <div className={styles.scanner}>
-        <span>Loading...</span>
-      </div>
+    <div className={style.loading}>
+      
+      <p>. . . . LOADING. . . . </p>
+      <div className={style.spinner}></div>
     </div>
-  )
-}
+  );
+};
 
-export default Loading
+export default Loading;

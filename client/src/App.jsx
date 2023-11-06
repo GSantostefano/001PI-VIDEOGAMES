@@ -1,84 +1,27 @@
-// import { useState } from 'react';
-// import {Route,Routes} from "react-router-dom";
+import { useState } from 'react';
+import {Route,Routes, useLocation} from "react-router-dom";
+import  "./App.css";
+import Home from "./views/HomePage/HomePage";
+import FormPage from "./views/FormPage/FormPage";
+import Detail from './views/DetailPage/DetailPage';
+import Landing from './views/LandingPage/LandingPage';
+import Nav from "./components/Nav/Nav";
 
-// import Home from "./views/home/home";
-// import Detail from './views/detail/detail';
-// import Create from './views/create/create';
-// import Landing from './views/landing/landing';
-// import Card from './components/card/card';
-// import Cards from './components/cards/cards';
-
-// function App() {
+function App() {
+  const {pathname} = useLocation();
   
-//   return (
-    
-//       <div>
-//       <Routes>
-//       <Route path="/" element={ <Landing /> } />      
-//       <Route exact path="/home" element={<Home/>}/>
-//       <Route path="/detail/:id" element={<Detail/>}/>
-//       <Route path="/create" element={<Create/>}/>
-//       </Routes>
-//       </div>
-//   )
-// }
-
-// export default App
-
-import LandingPage from "./components/LandingPage"
-import Detail from "./components/detail/Detail"
-import Cards from "./components/cards/cards"
-// import CreateVideogameForm from "./components/CreateVideogameForm"
-import NavBar from "./components/NavBar"
-import About from "./components/About"
-import RefreshRedirect from './components/RefreshRedirect';
-
-import {Routes, Route, useLocation, useNavigate } from "react-router-dom"
-
-import { useEffect } from "react"
-import { useDispatch } from 'react-redux';
-import { addVideogames } from './redux/actions';
-import axios from "axios"
-
-export default function App() {
-  
-  const location = useLocation();
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-
-  function goingHome() {
-    navigate('/home')
-  }
-
-  useEffect(() => {
-    dispatch(addVideogames()) 
-  }, [])
-
-  useEffect(() => {
-    (async function inEffect() {
-      try {
-        await axios.get('http://localhost:3001/genres')
-      } catch (error) {
-        console.log(error)
-      }
-    })()
-  }, [])
-  
-
-
   return (
-    <div className="App">
-      {/* {(location.pathname !== "/") && <NavBar />} */}
-      <RefreshRedirect />
+    
+      <div className="App">
+      {pathname!=="/home" && <Nav />}
       <Routes>
-        {/* <Route path="/" element={<LandingPage goingHome={goingHome} />}/> */}
-        <Route path="/home" element={<Cards  />} />
-        {/* <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/create" element={<CreateVideogameForm />} />
-        <Route path="/about" element={<About />} /> */}
+      <Route path="/" element={ <Landing /> } />      
+      <Route exact path="/home" element={<Home/>}/>
+      <Route path="/id/:id" element={<Detail/>}/>
+      <Route path="/form" element={<FormPage/>}/>
       </Routes>
-    </div>
-  );
+      </div>
+  )
 }
 
-
+export default App

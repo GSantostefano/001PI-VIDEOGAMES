@@ -4,7 +4,6 @@ const getVideogameByNameHandler = async (req, res) => {
     
     try {
         const { name } = req.query;
-        console.log("search by name :" + name);
         const arrayResult = await getVideogameByNameController(name);
         res.status(200).json(arrayResult);
     } catch (error) {

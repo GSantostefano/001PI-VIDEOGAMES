@@ -1,53 +1,40 @@
-// Importa las dependencias necesarias.
+//este archivo app
+//configurar middlewares y todo lo que configura posteriormente
+// se conecta con routers
+
+
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');  // Middleware de registro de solicitudes HTTP.
-const routes = require('./routes/index.js'); // Importa el enrutador principal.
-require('./db.js'); // Importa la configuración de la base de datos.
+const morgan = require('morgan');//middleware
+const routes = require('./routes/index.js');// importo mi main router
 
-// Crea una instancia de Express.
+require('./db.js');
+
 const server = express();
 
-// Configura el nombre de la aplicación como 'API'.
 server.name = 'API';
 
-// Configura middlewares para procesar solicitudes entrantes.
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 server.use(bodyParser.json({ limit: '50mb' }));
 server.use(cookieParser());
-
-// Middleware 'morgan' para registrar las solicitudes HTTP en el modo 'dev' (desarrollo).
-server.use(morgan('dev'));
-
-// Configura las cabeceras CORS para permitir solicitudes desde un origen específico.
+server.use(morgan('dev'));//middleware en ambito de developer
 server.use((req, res, next) => {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // update to match the domain you will make the request from
-=======
-  res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:3000'); // Actualiza con tu dominio.
->>>>>>> Stashed changes
-=======
-  res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:3000' || 'http://localhost:3000' ); // update to match the domain you will make the request from
->>>>>>> Stashed changes
+  res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
 
-// Asocia el enrutador principal ('routes') a la ruta base '/' de tu aplicación.
-server.use('/', routes);
+server.use('/', routes);//ACA MI APLICACION INVOCA LOS DIFERENTES ENDPOINT QUE LLEGUEN!! vamos a mi main router donde los controlamos--->>>"./routes/index.js"
 
-// Middleware para manejar errores. Captura los errores y envía una respuesta de error.
-server.use((err, req, res, next) => {
-  const status = err.status || 500; // Establece el código de estado HTTP.
-  const message = err.message || err; // Establece el mensaje de error.
-  console.error(err); // Registra el error en la consola.
-  res.status(status).send(message); // Envía una respuesta de error al cliente.
+// Error catching endware.
+server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+  const status = err.status || 500;
+  const message = err.message || err;
+  console.error(err);
+  res.status(status).send(message);
 });
 
-// Exporta la instancia de Express configurada como 'server'.
 module.exports = server;
-
