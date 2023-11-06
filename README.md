@@ -28,6 +28,7 @@ Botón para ingresar a la **`home page`**.
 <br />
 
 **📍 HOME PAGE |** la página principal de tu SPA debe contener:
+
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/3912ca91-5543-449c-a905-834473910109)
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/a33b1fbd-7ac7-42c2-aadf-9e2da950a9a0)
@@ -40,19 +41,26 @@ Botones/Opciones para **ordenar** tanto ascendentemente como descendentemente lo
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/e4b73405-78fe-4907-a2a3-e2f48f7d3d51)
 
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/6de84181-1be4-4f43-aba2-aa83e5ac28fd)
+
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/1b6ab892-57bb-4f61-9de9-f38c08546709)
+
+
 Paginado: el listado de videojuegos.
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/160bd030-3060-4a8d-ac5f-8755d39b3ff5)
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/da2ab3bf-a05f-4384-a216-82abd994349b)
 
-**⚠️ IMPORTANTE**: tanto los videojuegos traidos desde la API como así también los de la base de datos.
-
 <br />
 
 **📍 DETAIL PAGE |** en esta vista se deberá mostrar toda la información específica de un videojuego:
 
 ![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/aa0b5fb6-4aa1-4759-8b5c-f2d9f372a073)
+
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/27fb329e-6947-49e7-a828-c1c953de5931)
+
+![image](https://github.com/GSantostefano/001PI-VIDEOGAMES/assets/117599804/567247e8-f85c-4246-91b4-a8decc4cb45a)
 
 -  ID.
 -  Nombre.
