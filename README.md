@@ -1,6 +1,6 @@
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
-# **VIDEOGAMES** | Proyecto Individual
+# **¡R3C01L Videogames!** | Proyecto Individual
 
 ## **📌 OBJETIVOS**
 
